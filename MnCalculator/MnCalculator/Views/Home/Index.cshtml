@@ -1,31 +1,72 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model MnCalculator.Models.ChildSupportForm
+@{
+    ViewBag.Title = "Minnesota Child Support Calculator - Bill HF2889";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Minnesota Child Support Calculator</h1>
+    <p class="lead">
+        This calculator demostrates the calculated outcomes of Minnesota House Bill HF2889.  HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.  <br />To view the current calculator in effect as of @DateTime.Now.ToShortDateString()
+        <a href="http://childsupportcalculator.dhs.state.mn.us/" title="Minnesota Child Support Calculator">click here</a>
+    </p>
+    <p><a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" class="btn btn-primary btn-lg" title="Minnesota House Bill HF2889">See MN House Bill HF2889 &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+<div class="form-horizontal">
+    <h2>Minnesota Child Support Calculator</h2>
+    @using (Html.BeginForm("Result", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentA, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.ParentA, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NumberOfChildren, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.NumberOfChildren, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NumberOfChildren, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ParentAGrossIncome, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.ParentAGrossIncome, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ParentAGrossIncome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ParentBGrossIncome, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.ParentBGrossIncome, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ParentBGrossIncome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Calculate" class="btn btn-primary" />
+                </div>
+            </div>
+
+    }
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/unobtrusive")
+}
