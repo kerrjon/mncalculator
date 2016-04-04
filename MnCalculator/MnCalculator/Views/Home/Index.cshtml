@@ -17,56 +17,95 @@
     <h2>Minnesota Child Support Calculator</h2>
     @using (Html.BeginForm("Result", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
+
         <div class="form-group">
-            @Html.LabelFor(model => model.ParentA, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.ParentA, new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
                 @Html.TextBoxFor(m => m.ParentA, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ParentA, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
                 @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
             </div>
         </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.NumberOfChildren, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.NumberOfChildren, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.NumberOfChildren, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CaseNumber, new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.CaseNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CaseNumber, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ParentAGrossIncome, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.ParentAGrossIncome, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ParentAGrossIncome, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourtFileNumber, new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.CourtFileNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CourtFileNumber, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ParentBGrossIncome, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.ParentBGrossIncome, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ParentBGrossIncome, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfChildren, new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.NumberOfChildren, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NumberOfChildren, "", new { @class = "text-danger" })
             </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-4 col-sm-4 col-xs-4">&nbsp;</span>
+            <span class="col-md-4 col-sm-4 col-xs-4">Parent A</span>
+            <span class="col-md-4 col-sm-4 col-xs-4">Parent B</span>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentAGrossIncome, new { @class = "control-label col-md-4 col-sm-4 col-xs-4" })
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                @Html.TextBoxFor(m => m.ParentAGrossIncome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentAGrossIncome, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                @Html.TextBoxFor(m => m.ParentBGrossIncome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentBGrossIncome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentAOvernights, new { @class = "control-label col-md-4 col-sm-4 col-xs-4" })
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                @Html.TextBoxFor(m => m.ParentAOvernights, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentAOvernights, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <span id="parentBOvernights">182.5</span>
+            </div>
+        </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Calculate" class="btn btn-primary" />
                 </div>
             </div>
-
+            <p>* denotes required fields</p>
     }
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/unobtrusive")
+    <script>
+        $(document).ready(function () {
+            $('#ParentAOvernights').on('input', function () {
+                var parentBNights = 365 - $('#ParentAOvernights').val();
+                isNaN(parentBNights) ? $('#parentBOvernights').text("?"): $('#parentBOvernights').text(parentBNights);
+            });
+        });
+    </script>
 }
+

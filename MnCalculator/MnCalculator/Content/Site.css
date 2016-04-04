@@ -16,9 +16,50 @@
     white-space: normal;
 }
 
+.dl-horizontal dt, .dl-horizontal dd {
+    border-bottom: 1px dotted #ccc;
+    font-size: smaller;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    font-size: 3vw;
+}
+
+.form-horizontal .text-danger {
+     font-size: 2.5vw;
+    line-height: 1em;
+}
+
+.jumbotron {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+    .jumbotron h1 {
+        font-size: 24px;
+    }
+
+.lead {
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 20px;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+@media screen and (min-width: 400px) {
+    .form-horizontal .control-label {
+        font-size: 14px;
+    }
+
+    .form-horizontal .text-danger {
+        font-size: 11px;
+    }
 }

@@ -3,18 +3,112 @@
     ViewBag.Title = "Minnesota Child Support Calculator - Bill HF2889";
 }
 
-<div class="jumbotron">
-    <h1>Minnesota Child Support Calculator</h1>
-    <p class="lead">
-        This calculator demostrates the calculated outcomes of Minnesota House Bill HF2889.  HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.  <br />To view the current calculator in effect as of @DateTime.Now.ToShortDateString()
-        <a href="http://childsupportcalculator.dhs.state.mn.us/" title="Minnesota Child Support Calculator">click here</a>
-    </p>
-    <p><a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" class="btn btn-primary btn-lg" title="Minnesota House Bill HF2889">See MN House Bill HF2889 &raquo;</a></p>
-</div>
-
-
+<h2>Minnesota Child Support Calculator Results</h2>
 <div class="form-horizontal">
-    <h2>Minnesota Child Support Calculator Results</h2>
-    @Model.Result
+    <div class="col-md-12">
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.ParentA.Name)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.Name)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.Name)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.Name)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.CaseNumber)</dt>
+            <dd>@Html.DisplayFor(model => model.CaseNumber)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.CourtFileNumber)</dt>
+            <dd>@Html.DisplayFor(model => model.CourtFileNumber)</dd>
+        </dl>
+    </div>
+
+    <div class="dl-horizontal">
+        <span class="col-md-4 col-sm-4 col-xs-4">&nbsp;</span>
+        <span class="col-md-4 col-sm-4 col-xs-4">Parent A</span>
+        <span class="col-md-4 col-sm-4 col-xs-4">Parent B</span>
+    </div>
+
+    <div class="col-md-4">
+
+        <h4>Parent A</h4>
+        <dl class="dl-horizontal">
+
+
+            <dt>@Html.DisplayNameFor(model => model.ParentA.GrossIncome)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.GrossIncome)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentA.Overnights)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.Overnights)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentA.PercentageOfParentingTime)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.PercentageOfParentingTime)%</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentA.PicsAmount)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.PicsAmount)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentA.PicsPercentage)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.PicsPercentage)%</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.CombinedBasicSupportObligation)</dt>
+            <dd>----</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentA.ProRataBasicSupportObligation)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentA.ProRataBasicSupportObligation)</dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <h4>Parent B</h4>
+        <dl class="dl-horizontal">
+
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.GrossIncome)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.GrossIncome)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.Overnights)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.Overnights)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.PercentageOfParentingTime)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.PercentageOfParentingTime)%</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.PicsAmount)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.PicsAmount)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.PicsPercentage)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.PicsPercentage)%</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.CombinedBasicSupportObligation)</dt>
+            <dd>----</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.ProRataBasicSupportObligation)</dt>
+            <dd>@Html.DisplayFor(model => model.ParentB.ProRataBasicSupportObligation)</dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <h4>Combined</h4>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.Combined.Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Combined.Name)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Combined.GrossIncome)</dt>
+            <dd>@Html.DisplayFor(model => model.Combined.GrossIncome)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Combined.Overnights)</dt>
+            <dd>@Html.DisplayFor(model => model.Combined.Overnights)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Combined.PercentageOfParentingTime)</dt>
+            <dd>@Html.DisplayFor(model => model.Combined.PercentageOfParentingTime)%</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Combined.PicsAmount)</dt>
+            <dd>@Html.DisplayFor(model => model.Combined.PicsAmount)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Combined.PicsPercentage)</dt>
+            <dd>@Html.DisplayFor(model => model.Combined.PicsPercentage)%</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.CombinedBasicSupportObligation)</dt>
+            <dd>@Html.DisplayFor(model => model.CombinedBasicSupportObligation)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ParentB.ProRataBasicSupportObligation)</dt>
+            <dd>----</dd>
+        </dl>
+    </div>
 </div>
 
