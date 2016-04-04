@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<obligation>
+  <incomes>
+    <income min="0" max="999">
+      <amounts>
+        <amount children="1" value="001"/>
+        <amount children="2" value="002"/>
+        <amount children="3" value="003"/>
+        <amount children="4" value="004"/>
+        <amount children="5" value="005"/>
+        <amount children="6" value="006"/>
+      </amounts>
+    </income>
+    <income min="1000" max="1999">
+      <amounts>
+        <amount children="1" value="101"/>
+        <amount children="2" value="102"/>
+        <amount children="3" value="103"/>
+        <amount children="4" value="104"/>
+        <amount children="5" value="105"/>
+        <amount children="6" value="106"/>
+      </amounts>
+    </income>
+    <income min="2000" max="2999">
+      <amounts>
+        <amount children="1" value="201"/>
+        <amount children="2" value="202"/>
+        <amount children="3" value="203"/>
+        <amount children="4" value="204"/>
+        <amount children="5" value="205"/>
+        <amount children="6" value="206"/>
+      </amounts>
+    </income>
+    <income min="3000" max="3999">
+      <amounts>
+        <amount children="1" value="301"/>
+        <amount children="2" value="302"/>
+        <amount children="3" value="303"/>
+        <amount children="4" value="304"/>
+        <amount children="5" value="305"/>
+        <amount children="6" value="306"/>
+      </amounts>
+    </income>
+    <income min="4000" max="4999">
+      <amounts>
+        <amount children="1" value="401"/>
+        <amount children="2" value="402"/>
+        <amount children="3" value="403"/>
+        <amount children="4" value="404"/>
+        <amount children="5" value="405"/>
+        <amount children="6" value="406"/>
+      </amounts>
+    </income>
+  </incomes>
+</obligation>
