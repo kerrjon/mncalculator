@@ -16,11 +16,24 @@
     white-space: normal;
 }
 
-.dl-horizontal dt, .dl-horizontal dd {
-    border-bottom: 1px dotted #ccc;
-    font-size: smaller;
+.dl-horizontal dt, .dl-horizontal dd, .resultRow span {
+    font-size: 11px;
+    text-align: left;
+    padding: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+.resultRow:nth-of-type(odd) {
+    background-color: #f0f0f0;
+}
+.resultRow span:first-child {
+    font-weight: bold;
+}
+.headerRow {
+    font-weight: bold;
+}
 .form-horizontal .control-label {
     text-align: left;
     font-size: 3vw;
@@ -42,6 +55,12 @@
 
 .lead {
     font-size: 14px;
+}
+
+#parentBOvernights {
+    padding-top: 5px;
+    padding-left: 10px;
+    display: inline-block;
 }
 
 h2 {

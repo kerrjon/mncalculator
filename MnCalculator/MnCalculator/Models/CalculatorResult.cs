@@ -26,7 +26,7 @@ namespace MnCalculator.Models
                 {
                     Name = input.ParentA,
                     GrossIncome = decimal.Round(input.ParentAGrossIncome, 0),
-                    PercentageOfParentingTime = decimal.Round(input.ParentAOvernights/(input.ParentAOvernights + parentBOvernights) *100, 1),
+                    PercentageOfParentingTime = decimal.Round(input.ParentAOvernights/(input.ParentAOvernights + parentBOvernights),3) *100,
                     Overnights = decimal.Round(input.ParentAOvernights, 1),
                     PicsAmount = input.ParentAGrossIncome, //todo: subtract other child
                     PicsPercentage = decimal.Round(input.ParentAGrossIncome / (input.ParentAGrossIncome + input.ParentBGrossIncome),3) * 100,
@@ -36,7 +36,7 @@ namespace MnCalculator.Models
                 {
                     Name = input.ParentB,
                     GrossIncome = decimal.Round(input.ParentBGrossIncome, 0),
-                    PercentageOfParentingTime = decimal.Round(parentBOvernights / (input.ParentAOvernights + parentBOvernights) *100, 1),
+                    PercentageOfParentingTime = decimal.Round(parentBOvernights / (input.ParentAOvernights + parentBOvernights),3) *100,
                     Overnights = decimal.Round(input.ParentAOvernights, 1),
                     PicsAmount = input.ParentBGrossIncome, //todo: subtract other child
                     PicsPercentage = decimal.Round(input.ParentBGrossIncome / (input.ParentAGrossIncome + input.ParentBGrossIncome),3) * 100,
@@ -58,9 +58,6 @@ namespace MnCalculator.Models
 
 
             };
-
-           
-
 
             return model;
         }

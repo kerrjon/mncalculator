@@ -7,7 +7,9 @@ namespace MnCalculator.Models
         public ChildSupportForm()
         {
             NumberOfChildren = 1;
+            ParentAGrossIncome = 2000;
             ParentAOvernights = (decimal) 182.5;
+            ParentBGrossIncome = 2000;
         }
 
         [Display(Name ="Parent A Name")]
@@ -27,12 +29,12 @@ namespace MnCalculator.Models
         [Range(typeof(int), "1", "6", ErrorMessage = "Number of Children must be greater than 0 and less 7.  Enter 6 if you have 6 or more children.")]
         public int NumberOfChildren { get; set; }
 
-        [Display(Name = "Gross Income")]
+        [Display(Name = "Monthly Gross Income")]
         [Required(ErrorMessage = "Parent A Gross Income is Required")]
         [Range(typeof(decimal), "0", "79228162514264337593543950335", ErrorMessage="Gross income must be 0 or greater.  Enter zero for no income.")]
         public decimal ParentAGrossIncome { get; set; }
 
-        [Display(Name = "Gross Income")]
+        [Display(Name = "Monthly Gross Income")]
         [Required(ErrorMessage = "Parent B Gross Income is Required")]
         [Range(typeof(decimal), "0", "79228162514264337593543950335", ErrorMessage = "Gross income must be 0 or greater.  Enter zero for no income.")]
         public decimal ParentBGrossIncome { get; set; }
