@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MnCalculator.Models
 {
@@ -18,46 +19,79 @@ namespace MnCalculator.Models
 
         public static CalculatorResult Create(ChildSupportForm input)
         {
-            var combinedSupportObligation = 2777;
-            var parentBOvernights = 365 - input.ParentAOvernights;
+            var combinedSupportObligation = 2727;
+            var parentBOvernights = Math.Round(365 - input.ParentAOvernights,1);
+
             var model = new CalculatorResult
             {
                 ParentA = new Parent
                 {
                     Name = input.ParentA,
-                    GrossIncome = decimal.Round(input.ParentAGrossIncome, 0),
-                    PercentageOfParentingTime = decimal.Round(input.ParentAOvernights/(input.ParentAOvernights + parentBOvernights),3) *100,
-                    Overnights = decimal.Round(input.ParentAOvernights, 1),
-                    PicsAmount = input.ParentAGrossIncome, //todo: subtract other child
-                    PicsPercentage = decimal.Round(input.ParentAGrossIncome / (input.ParentAGrossIncome + input.ParentBGrossIncome),3) * 100,
-                    ProRataBasicSupportObligation = decimal.Round(input.ParentAGrossIncome / (input.ParentAGrossIncome + input.ParentBGrossIncome) * combinedSupportObligation,2)
+                    GrossIncome = (double) Math.Round(input.ParentAGrossIncome, 0),
+                    PercentageOfParentingTime =
+                        Math.Round(input.ParentAOvernights/(input.ParentAOvernights + parentBOvernights), 3)*100,
+                    Overnights = Math.Round(input.ParentAOvernights, 1),
+                    PicsAmount = (double) input.ParentAGrossIncome, //todo: subtract other child
+                    PicsPercentage =
+                        (double)
+                            (Math.Round(input.ParentAGrossIncome/(input.ParentAGrossIncome + input.ParentBGrossIncome),
+                                3)*100),
+                    ProRataBasicSupportObligation =
+                        (double)
+                            Math.Round(
+                                input.ParentAGrossIncome/(input.ParentAGrossIncome + input.ParentBGrossIncome)*
+                                combinedSupportObligation, 2)
                 },
                 ParentB = new Parent
                 {
                     Name = input.ParentB,
-                    GrossIncome = decimal.Round(input.ParentBGrossIncome, 0),
-                    PercentageOfParentingTime = decimal.Round(parentBOvernights / (input.ParentAOvernights + parentBOvernights),3) *100,
-                    Overnights = decimal.Round(input.ParentAOvernights, 1),
-                    PicsAmount = input.ParentBGrossIncome, //todo: subtract other child
-                    PicsPercentage = decimal.Round(input.ParentBGrossIncome / (input.ParentAGrossIncome + input.ParentBGrossIncome),3) * 100,
-                    ProRataBasicSupportObligation = decimal.Round(input.ParentBGrossIncome / (input.ParentAGrossIncome + input.ParentBGrossIncome) * combinedSupportObligation, 2)
+                    GrossIncome = (double) Math.Round(input.ParentBGrossIncome, 0),
+                    PercentageOfParentingTime =
+                        Math.Round(parentBOvernights/(input.ParentAOvernights + parentBOvernights), 3)*100,
+                    Overnights = parentBOvernights,
+                    PicsAmount = (double) input.ParentBGrossIncome, //todo: subtract other child
+                    PicsPercentage =
+                        (double)
+                            (Math.Round(input.ParentBGrossIncome/(input.ParentAGrossIncome + input.ParentBGrossIncome),
+                                3)*100),
+                    ProRataBasicSupportObligation =
+                        (double)
+                            Math.Round(
+                                input.ParentBGrossIncome/(input.ParentAGrossIncome + input.ParentBGrossIncome)*
+                                combinedSupportObligation, 2)
                 },
                 Combined = new Parent
                 {
                     Name = string.Empty,
-                    GrossIncome = decimal.Round(input.ParentAGrossIncome + input.ParentBGrossIncome, 0),
+                    GrossIncome = (double) Math.Round(input.ParentAGrossIncome + input.ParentBGrossIncome, 0),
                     PercentageOfParentingTime = 100,
                     Overnights = input.ParentAOvernights + parentBOvernights,
-                    PicsAmount = input.ParentAGrossIncome + input.ParentBGrossIncome, //todo: subtract other child
+                    PicsAmount = (double) (input.ParentAGrossIncome + input.ParentBGrossIncome),
+                    //todo: subtract other child
                     PicsPercentage = 100,
                 },
-                CombinedBasicSupportObligation = combinedSupportObligation,  //ToDo: get from xml
+                CombinedBasicSupportObligation = combinedSupportObligation, //ToDo: get from xml
                 NumberOfChildren = input.NumberOfChildren,
                 CourtFileNumber = input.CourtFileNumber,
-                CaseNumber = input.CaseNumber
-
-
+                CaseNumber = input.CaseNumber,
+                
             };
+
+            var parentingTimeAdjusment = ((Math.Pow(parentBOvernights, 3.00) * model.ParentA.ProRataBasicSupportObligation) -
+                                          (Math.Pow(input.ParentAOvernights, 3.00) * model.ParentB.ProRataBasicSupportObligation))/
+                                         (Math.Pow(parentBOvernights, 3.00) + (Math.Pow(input.ParentAOvernights, 3.00)));
+
+        
+            if (parentingTimeAdjusment < 0) //Parent B is obligor (it is not A as described in bill?)
+            {
+                model.ParentA.BasicSupportObligationAfterAdjustment = 0;
+                model.ParentB.BasicSupportObligationAfterAdjustment = Math.Round(parentingTimeAdjusment *-1, 2); 
+            }
+            else
+            {
+                model.ParentA.BasicSupportObligationAfterAdjustment = Math.Round(parentingTimeAdjusment,2);
+                model.ParentB.BasicSupportObligationAfterAdjustment = 0;
+            }
 
             return model;
         }
@@ -66,27 +100,27 @@ namespace MnCalculator.Models
     public class Parent
     {
         public string Name { get; set; }
-        public decimal Overnights { get; set; }
+        public double Overnights { get; set; }
 
         [Display(Name="Gross Income")]
-        public decimal GrossIncome { get; set; }
+        public double GrossIncome { get; set; }
 
         [Display(Name = "Percentage of Parenting Time")]
-        public decimal PercentageOfParentingTime { get; set; }
+        public double PercentageOfParentingTime { get; set; }
 
         [Display(Name = "Percentage Share of Combined PICS")]
-        public decimal PicsPercentage { get; set; }
+        public double PicsPercentage { get; set; }
 
         [Display(Name = "Parental Income for Determining Child Support")]
-        public decimal PicsAmount { get; set; }
+        public double PicsAmount { get; set; }
 
         [Display(Name = "Pro Rata Basic Support Obligation")]
-        public decimal ProRataBasicSupportObligation { get; set; }
+        public double ProRataBasicSupportObligation { get; set; }
 
         [Display(Name = "Adjustment for Parenting Time")]
-        public decimal AdjustmentForParentingTime { get; set; }
+        public double AdjustmentForParentingTime { get; set; }
 
         [Display(Name = "Obligation After Parenting Time Adjustment")]
-        public decimal BasicSupportObligationAfterAdjustment { get; set; }
+        public double BasicSupportObligationAfterAdjustment { get; set; }
     }
 }

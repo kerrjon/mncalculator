@@ -8,7 +8,7 @@ namespace MnCalculator.Models
         {
             NumberOfChildren = 1;
             ParentAGrossIncome = 2000;
-            ParentAOvernights = (decimal) 182.5;
+            ParentAOvernights = 182.5;
             ParentBGrossIncome = 2000;
         }
 
@@ -42,7 +42,7 @@ namespace MnCalculator.Models
         [Display(Name = "Number of overnights")]
         [Required(ErrorMessage = "Parent A overnights is required")]
         [Range(typeof(decimal), "0", "182.5", ErrorMessage = "Parent A is the parent with the least number of overnights.  Value must be between 0 and 182.5")]
-        public decimal ParentAOvernights { get; set; }
+        public double ParentAOvernights { get; set; }
 
         [Display(Name = "Number of overnights")]
         [Range(typeof(decimal), "0", "365", ErrorMessage = "Number of overnights must be between 0 and 365.")]
