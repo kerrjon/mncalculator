@@ -1,54 +1,1587 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <obligation>
   <incomes>
-    <income min="0" max="999">
+    <income min="0" max="799">
       <amounts>
-        <amount children="1" value="001"/>
-        <amount children="2" value="002"/>
-        <amount children="3" value="003"/>
-        <amount children="4" value="004"/>
-        <amount children="5" value="005"/>
-        <amount children="6" value="006"/>
+        <amount children="1" value="50"/>
+        <amount children="2" value="50"/>
+        <amount children="3" value="75"/>
+        <amount children="4" value="75"/>
+        <amount children="5" value="100"/>
+        <amount children="6" value="100"/>
       </amounts>
     </income>
-    <income min="1000" max="1999">
+
+    <income min="800" max="899">
       <amounts>
-        <amount children="1" value="101"/>
-        <amount children="2" value="102"/>
-        <amount children="3" value="103"/>
-        <amount children="4" value="104"/>
-        <amount children="5" value="105"/>
-        <amount children="6" value="106"/>
+        <amount children="1" value="80"/>
+        <amount children="2" value="129"/>
+        <amount children="3" value="149"/>
+        <amount children="4" value="173"/>
+        <amount children="5" value="201"/>
+        <amount children="6" value="233"/>
       </amounts>
     </income>
-    <income min="2000" max="2999">
+
+    <income min="900" max="999">
       <amounts>
-        <amount children="1" value="201"/>
-        <amount children="2" value="202"/>
-        <amount children="3" value="203"/>
-        <amount children="4" value="204"/>
-        <amount children="5" value="205"/>
-        <amount children="6" value="206"/>
+        <amount children="1" value="90"/>
+        <amount children="2" value="145"/>
+        <amount children="3" value="167"/>
+        <amount children="4" value="194"/>
+        <amount children="5" value="226"/>
+        <amount children="6" value="262"/>
       </amounts>
     </income>
-    <income min="3000" max="3999">
+
+    <income min="1000" max="1099">
       <amounts>
-        <amount children="1" value="301"/>
-        <amount children="2" value="302"/>
-        <amount children="3" value="303"/>
-        <amount children="4" value="304"/>
-        <amount children="5" value="305"/>
-        <amount children="6" value="306"/>
+        <amount children="1" value="116"/>
+        <amount children="2" value="161"/>
+        <amount children="3" value="186"/>
+        <amount children="4" value="216"/>
+        <amount children="5" value="251"/>
+        <amount children="6" value="291"/>
       </amounts>
     </income>
-    <income min="4000" max="4999">
+
+    <income min="1100" max="1199">
       <amounts>
-        <amount children="1" value="401"/>
-        <amount children="2" value="402"/>
-        <amount children="3" value="403"/>
-        <amount children="4" value="404"/>
-        <amount children="5" value="405"/>
-        <amount children="6" value="406"/>
+        <amount children="1" value="145"/>
+        <amount children="2" value="205"/>
+        <amount children="3" value="237"/>
+        <amount children="4" value="275"/>
+        <amount children="5" value="320"/>
+        <amount children="6" value="370"/>
+      </amounts>
+    </income>
+
+    <income min="1200" max="1299">
+      <amounts>
+        <amount children="1" value="177"/>
+        <amount children="2" value="254"/>
+        <amount children="3" value="294"/>
+        <amount children="4" value="341"/>
+        <amount children="5" value="396"/>
+        <amount children="6" value="459"/>
+      </amounts>
+    </income>
+
+    <income min="1300" max="1399">
+      <amounts>
+        <amount children="1" value="212"/>
+        <amount children="2" value="309"/>
+        <amount children="3" value="356"/>
+        <amount children="4" value="414"/>
+        <amount children="5" value="480"/>
+        <amount children="6" value="557"/>
+      </amounts>
+    </income>
+
+    <income min="1400" max="1499">
+      <amounts>
+        <amount children="1" value="251"/>
+        <amount children="2" value="368"/>
+        <amount children="3" value="425"/>
+        <amount children="4" value="493"/>
+        <amount children="5" value="573"/>
+        <amount children="6" value="664"/>
+      </amounts>
+    </income>
+
+    <income min="1500" max="1599">
+      <amounts>
+        <amount children="1" value="292"/>
+        <amount children="2" value="433"/>
+        <amount children="3" value="500"/>
+        <amount children="4" value="580"/>
+        <amount children="5" value="673"/>
+        <amount children="6" value="780"/>
+      </amounts>
+    </income>
+
+    <income min="1600" max="1699">
+      <amounts>
+        <amount children="1" value="337"/>
+        <amount children="2" value="502"/>
+        <amount children="3" value="580"/>
+        <amount children="4" value="673"/>
+        <amount children="5" value="781"/>
+        <amount children="6" value="905"/>
+      </amounts>
+    </income>
+
+    <income min="1700" max="1799">
+      <amounts>
+        <amount children="1" value="385"/>
+        <amount children="2" value="577"/>
+        <amount children="3" value="666"/>
+        <amount children="4" value="773"/>
+        <amount children="5" value="897"/>
+        <amount children="6" value="1040"/>
+      </amounts>
+    </income>
+
+    <income min="1800" max="1899">
+      <amounts>
+        <amount children="1" value="436"/>
+        <amount children="2" value="657"/>
+        <amount children="3" value="758"/>
+        <amount children="4" value="880"/>
+        <amount children="5" value="1021"/>
+        <amount children="6" value="1183"/>
+      </amounts>
+    </income>
+
+    <income min="1900" max="1999">
+      <amounts>
+        <amount children="1" value="490"/>
+        <amount children="2" value="742"/>
+        <amount children="3" value="856"/>
+        <amount children="4" value="994"/>
+        <amount children="5" value="1152"/>
+        <amount children="6" value="1336"/>
+      </amounts>
+    </income>
+
+    <income min="2000" max="2099">
+      <amounts>
+        <amount children="1" value="516"/>
+        <amount children="2" value="832"/>
+        <amount children="3" value="960"/>
+        <amount children="4" value="1114"/>
+        <amount children="5" value="1292"/>
+        <amount children="6" value="1498"/>
+      </amounts>
+    </income>
+
+    <income min="2100" max="2199">
+      <amounts>
+        <amount children="1" value="528"/>
+        <amount children="2" value="851"/>
+        <amount children="3" value="981"/>
+        <amount children="4" value="1139"/>
+        <amount children="5" value="1320"/>
+        <amount children="6" value="1531"/>
+      </amounts>
+    </income>
+
+    <income min="2200" max="2299">
+      <amounts>
+        <amount children="1" value="538"/>
+        <amount children="2" value="867"/>
+        <amount children="3" value="1000"/>
+        <amount children="4" value="1160"/>
+        <amount children="5" value="1346"/>
+        <amount children="6" value="1561"/>
+      </amounts>
+    </income>
+
+    <income min="2300" max="2399">
+      <amounts>
+        <amount children="1" value="546"/>
+        <amount children="2" value="881"/>
+        <amount children="3" value="1016"/>
+        <amount children="4" value="1179"/>
+        <amount children="5" value="1367"/>
+        <amount children="6" value="1586"/>
+      </amounts>
+    </income>
+
+    <income min="2400" max="2499">
+      <amounts>
+        <amount children="1" value="554"/>
+        <amount children="2" value="893"/>
+        <amount children="3" value="1029"/>
+        <amount children="4" value="1195"/>
+        <amount children="5" value="1385"/>
+        <amount children="6" value="1608"/>
+      </amounts>
+    </income>
+
+    <income min="2500" max="2599">
+      <amounts>
+        <amount children="1" value="560"/>
+        <amount children="2" value="903"/>
+        <amount children="3" value="1040"/>
+        <amount children="4" value="1208"/>
+        <amount children="5" value="1400"/>
+        <amount children="6" value="1625"/>
+      </amounts>
+    </income>
+
+    <income min="2600" max="2699">
+      <amounts>
+        <amount children="1" value="570"/>
+        <amount children="2" value="920"/>
+        <amount children="3" value="1060"/>
+        <amount children="4" value="1230"/>
+        <amount children="5" value="1426"/>
+        <amount children="6" value="1655"/>
+      </amounts>
+    </income>
+
+    <income min="2700" max="2799">
+      <amounts>
+        <amount children="1" value="580"/>
+        <amount children="2" value="936"/>
+        <amount children="3" value="1078"/>
+        <amount children="4" value="1251"/>
+        <amount children="5" value="1450"/>
+        <amount children="6" value="1683"/>
+      </amounts>
+    </income>
+
+    <income min="2800" max="2899">
+      <amounts>
+        <amount children="1" value="589"/>
+        <amount children="2" value="950"/>
+        <amount children="3" value="1094"/>
+        <amount children="4" value="1270"/>
+        <amount children="5" value="1472"/>
+        <amount children="6" value="1707"/>
+      </amounts>
+    </income>
+
+    <income min="2900" max="2999">
+      <amounts>
+        <amount children="1" value="596"/>
+        <amount children="2" value="963"/>
+        <amount children="3" value="1109"/>
+        <amount children="4" value="1287"/>
+        <amount children="5" value="1492"/>
+        <amount children="6" value="1730"/>
+      </amounts>
+    </income>
+
+    <income min="3000" max="3099">
+      <amounts>
+        <amount children="1" value="603"/>
+        <amount children="2" value="975"/>
+        <amount children="3" value="1122"/>
+        <amount children="4" value="1302"/>
+        <amount children="5" value="1509"/>
+        <amount children="6" value="1749"/>
+      </amounts>
+    </income>
+
+    <income min="3100" max="3199">
+      <amounts>
+        <amount children="1" value="613"/>
+        <amount children="2" value="991"/>
+        <amount children="3" value="1141"/>
+        <amount children="4" value="1324"/>
+        <amount children="5" value="1535"/>
+        <amount children="6" value="1779"/>
+      </amounts>
+    </income>
+
+    <income min="3200" max="3299">
+      <amounts>
+        <amount children="1" value="623"/>
+        <amount children="2" value="1007"/>
+        <amount children="3" value="1158"/>
+        <amount children="4" value="1344"/>
+        <amount children="5" value="1558"/>
+        <amount children="6" value="1807"/>
+      </amounts>
+    </income>
+
+    <income min="3300" max="3399">
+      <amounts>
+        <amount children="1" value="636"/>
+        <amount children="2" value="1021"/>
+        <amount children="3" value="1175"/>
+        <amount children="4" value="1363"/>
+        <amount children="5" value="1581"/>
+        <amount children="6" value="1833"/>
+      </amounts>
+    </income>
+
+    <income min="3400" max="3499">
+      <amounts>
+        <amount children="1" value="650"/>
+        <amount children="2" value="1034"/>
+        <amount children="3" value="1190"/>
+        <amount children="4" value="1380"/>
+        <amount children="5" value="1601"/>
+        <amount children="6" value="1857"/>
+      </amounts>
+    </income>
+
+    <income min="3500" max="3599">
+      <amounts>
+        <amount children="1" value="664"/>
+        <amount children="2" value="1047"/>
+        <amount children="3" value="1204"/>
+        <amount children="4" value="1397"/>
+        <amount children="5" value="1621"/>
+        <amount children="6" value="1880"/>
+      </amounts>
+    </income>
+
+    <income min="3600" max="3699">
+      <amounts>
+        <amount children="1" value="677"/>
+        <amount children="2" value="1062"/>
+        <amount children="3" value="1223"/>
+        <amount children="4" value="1418"/>
+        <amount children="5" value="1646"/>
+        <amount children="6" value="1909"/>
+      </amounts>
+    </income>
+
+    <income min="3700" max="3799">
+      <amounts>
+        <amount children="1" value="691"/>
+        <amount children="2" value="1077"/>
+        <amount children="3" value="1240"/>
+        <amount children="4" value="1439"/>
+        <amount children="5" value="1670"/>
+        <amount children="6" value="1937"/>
+      </amounts>
+    </income>
+
+    <income min="3800" max="3899">
+      <amounts>
+        <amount children="1" value="705"/>
+        <amount children="2" value="1081"/>
+        <amount children="3" value="1257"/>
+        <amount children="4" value="1459"/>
+        <amount children="5" value="1693"/>
+        <amount children="6" value="1963"/>
+      </amounts>
+    </income>
+
+    <income min="3900" max="3999">
+      <amounts>
+        <amount children="1" value="719"/>
+        <amount children="2" value="1104"/>
+        <amount children="3" value="1273"/>
+        <amount children="4" value="1478"/>
+        <amount children="5" value="1715"/>
+        <amount children="6" value="1988"/>
+      </amounts>
+    </income>
+
+    <income min="4000" max="4099">
+      <amounts>
+        <amount children="1" value="732"/>
+        <amount children="2" value="1116"/>
+        <amount children="3" value="1288"/>
+        <amount children="4" value="1496"/>
+        <amount children="5" value="1736"/>
+        <amount children="6" value="2012"/>
+      </amounts>
+    </income>
+
+    <income min="4100" max="4199">
+      <amounts>
+        <amount children="1" value="746"/>
+        <amount children="2" value="1132"/>
+        <amount children="3" value="1305"/>
+        <amount children="4" value="1516"/>
+        <amount children="5" value="1759"/>
+        <amount children="6" value="2039"/>
+      </amounts>
+    </income>
+
+    <income min="4200" max="4299">
+      <amounts>
+        <amount children="1" value="760"/>
+        <amount children="2" value="1147"/>
+        <amount children="3" value="1322"/>
+        <amount children="4" value="1536"/>
+        <amount children="5" value="1781"/>
+        <amount children="6" value="2064"/>
+      </amounts>
+    </income>
+
+    <income min="4300" max="4399">
+      <amounts>
+        <amount children="1" value="774"/>
+        <amount children="2" value="1161"/>
+        <amount children="3" value="1338"/>
+        <amount children="4" value="1554"/>
+        <amount children="5" value="1802"/>
+        <amount children="6" value="2088"/>
+      </amounts>
+    </income>
+
+    <income min="4400" max="4499">
+      <amounts>
+        <amount children="1" value="787"/>
+        <amount children="2" value="1175"/>
+        <amount children="3" value="1353"/>
+        <amount children="4" value="1572"/>
+        <amount children="5" value="1822"/>
+        <amount children="6" value="2111"/>
+      </amounts>
+    </income>
+
+    <income min="4500" max="4599">
+      <amounts>
+        <amount children="1" value="801"/>
+        <amount children="2" value="1184"/>
+        <amount children="3" value="1368"/>
+        <amount children="4" value="1589"/>
+        <amount children="5" value="1841"/>
+        <amount children="6" value="2133"/>
+      </amounts>
+    </income>
+
+    <income min="4600" max="4699">
+      <amounts>
+        <amount children="1" value="808"/>
+        <amount children="2" value="1200"/>
+        <amount children="3" value="1386"/>
+        <amount children="4" value="1608"/>
+        <amount children="5" value="1864"/>
+        <amount children="6" value="2160"/>
+      </amounts>
+    </income>
+
+    <income min="4700" max="4799">
+      <amounts>
+        <amount children="1" value="814"/>
+        <amount children="2" value="1215"/>
+        <amount children="3" value="1402"/>
+        <amount children="4" value="1627"/>
+        <amount children="5" value="1887"/>
+        <amount children="6" value="2186"/>
+      </amounts>
+    </income>
+
+    <income min="4800" max="4899">
+      <amounts>
+        <amount children="1" value="820"/>
+        <amount children="2" value="1231"/>
+        <amount children="3" value="1419"/>
+        <amount children="4" value="1645"/>
+        <amount children="5" value="1908"/>
+        <amount children="6" value="2212"/>
+      </amounts>
+    </income>
+
+    <income min="4900" max="4999">
+      <amounts>
+        <amount children="1" value="825"/>
+        <amount children="2" value="1246"/>
+        <amount children="3" value="1435"/>
+        <amount children="4" value="1663"/>
+        <amount children="5" value="1930"/>
+        <amount children="6" value="2236"/>
+      </amounts>
+    </income>
+
+    <income min="5000" max="5099">
+      <amounts>
+        <amount children="1" value="831"/>
+        <amount children="2" value="1260"/>
+        <amount children="3" value="1450"/>
+        <amount children="4" value="1680"/>
+        <amount children="5" value="1950"/>
+        <amount children="6" value="2260"/>
+      </amounts>
+    </income>
+
+    <income min="5100" max="5199">
+      <amounts>
+        <amount children="1" value="837"/>
+        <amount children="2" value="1275"/>
+        <amount children="3" value="1468"/>
+        <amount children="4" value="1701"/>
+        <amount children="5" value="1975"/>
+        <amount children="6" value="2289"/>
+      </amounts>
+    </income>
+
+    <income min="5200" max="5299">
+      <amounts>
+        <amount children="1" value="843"/>
+        <amount children="2" value="1290"/>
+        <amount children="3" value="1485"/>
+        <amount children="4" value="1722"/>
+        <amount children="5" value="1999"/>
+        <amount children="6" value="2317"/>
+      </amounts>
+    </income>
+
+    <income min="5300" max="5399">
+      <amounts>
+        <amount children="1" value="849"/>
+        <amount children="2" value="1304"/>
+        <amount children="3" value="1502"/>
+        <amount children="4" value="1743"/>
+        <amount children="5" value="2022"/>
+        <amount children="6" value="2345"/>
+      </amounts>
+    </income>
+
+    <income min="5400" max="5499">
+      <amounts>
+        <amount children="1" value="854"/>
+        <amount children="2" value="1318"/>
+        <amount children="3" value="1518"/>
+        <amount children="4" value="1763"/>
+        <amount children="5" value="2046"/>
+        <amount children="6" value="2372"/>
+      </amounts>
+    </income>
+
+    <income min="5500" max="5599">
+      <amounts>
+        <amount children="1" value="860"/>
+        <amount children="2" value="1331"/>
+        <amount children="3" value="1535"/>
+        <amount children="4" value="1782"/>
+        <amount children="5" value="2068"/>
+        <amount children="6" value="2398"/>
+      </amounts>
+    </income>
+
+    <income min="5600" max="5699">
+      <amounts>
+        <amount children="1" value="866"/>
+        <amount children="2" value="1346"/>
+        <amount children="3" value="1551"/>
+        <amount children="4" value="1801"/>
+        <amount children="5" value="2090"/>
+        <amount children="6" value="2424"/>
+      </amounts>
+    </income>
+
+    <income min="5700" max="5799">
+      <amounts>
+        <amount children="1" value="873"/>
+        <amount children="2" value="1357"/>
+        <amount children="3" value="1568"/>
+        <amount children="4" value="1819"/>
+        <amount children="5" value="2111"/>
+        <amount children="6" value="2449"/>
+      </amounts>
+    </income>
+
+    <income min="5800" max="5899">
+      <amounts>
+        <amount children="1" value="881"/>
+        <amount children="2" value="1376"/>
+        <amount children="3" value="1583"/>
+        <amount children="4" value="1837"/>
+        <amount children="5" value="2132"/>
+        <amount children="6" value="2473"/>
+      </amounts>
+    </income>
+
+    <income min="5900" max="5999">
+      <amounts>
+        <amount children="1" value="888"/>
+        <amount children="2" value="1390"/>
+        <amount children="3" value="1599"/>
+        <amount children="4" value="1855"/>
+        <amount children="5" value="2152"/>
+        <amount children="6" value="2497"/>
+      </amounts>
+    </income>
+
+    <income min="6000" max="6099">
+      <amounts>
+        <amount children="1" value="895"/>
+        <amount children="2" value="1404"/>
+        <amount children="3" value="1604"/>
+        <amount children="4" value="1872"/>
+        <amount children="5" value="2172"/>
+        <amount children="6" value="2520"/>
+      </amounts>
+    </income>
+
+    <income min="6100" max="6199">
+      <amounts>
+        <amount children="1" value="902"/>
+        <amount children="2" value="1419"/>
+        <amount children="3" value="1631"/>
+        <amount children="4" value="1892"/>
+        <amount children="5" value="2195"/>
+        <amount children="6" value="2546"/>
+      </amounts>
+    </income>
+
+    <income min="6200" max="6299">
+      <amounts>
+        <amount children="1" value="909"/>
+        <amount children="2" value="1433"/>
+        <amount children="3" value="1645"/>
+        <amount children="4" value="1912"/>
+        <amount children="5" value="2217"/>
+        <amount children="6" value="2572"/>
+      </amounts>
+    </income>
+
+    <income min="6300" max="6399">
+      <amounts>
+        <amount children="1" value="916"/>
+        <amount children="2" value="1448"/>
+        <amount children="3" value="1664"/>
+        <amount children="4" value="1932"/>
+        <amount children="5" value="2239"/>
+        <amount children="6" value="2597"/>
+      </amounts>
+    </income>
+
+    <income min="6400" max="6499">
+      <amounts>
+        <amount children="1" value="923"/>
+        <amount children="2" value="1462"/>
+        <amount children="3" value="1682"/>
+        <amount children="4" value="1951"/>
+        <amount children="5" value="2260"/>
+        <amount children="6" value="2621"/>
+      </amounts>
+    </income>
+
+    <income min="6500" max="6599">
+      <amounts>
+        <amount children="1" value="930"/>
+        <amount children="2" value="1476"/>
+        <amount children="3" value="1697"/>
+        <amount children="4" value="1970"/>
+        <amount children="5" value="2282"/>
+        <amount children="6" value="2646"/>
+      </amounts>
+    </income>
+
+    <income min="6600" max="6699">
+      <amounts>
+        <amount children="1" value="936"/>
+        <amount children="2" value="1490"/>
+        <amount children="3" value="1713"/>
+        <amount children="4" value="1989"/>
+        <amount children="5" value="2305"/>
+        <amount children="6" value="2673"/>
+      </amounts>
+    </income>
+
+    <income min="6700" max="6799">
+      <amounts>
+        <amount children="1" value="943"/>
+        <amount children="2" value="1505"/>
+        <amount children="3" value="1730"/>
+        <amount children="4" value="2009"/>
+        <amount children="5" value="2328"/>
+        <amount children="6" value="2700"/>
+      </amounts>
+    </income>
+
+    <income min="6800" max="6899">
+      <amounts>
+        <amount children="1" value="950"/>
+        <amount children="2" value="1519"/>
+        <amount children="3" value="1746"/>
+        <amount children="4" value="2028"/>
+        <amount children="5" value="2350"/>
+        <amount children="6" value="2727"/>
+      </amounts>
+    </income>
+
+    <income min="6900" max="6999">
+      <amounts>
+        <amount children="1" value="957"/>
+        <amount children="2" value="1533"/>
+        <amount children="3" value="1762"/>
+        <amount children="4" value="2047"/>
+        <amount children="5" value="2379"/>
+        <amount children="6" value="2747"/>
+      </amounts>
+    </income>
+
+    <income min="7000" max="7099">
+      <amounts>
+        <amount children="1" value="963"/>
+        <amount children="2" value="1547"/>
+        <amount children="3" value="1778"/>
+        <amount children="4" value="2065"/>
+        <amount children="5" value="2394"/>
+        <amount children="6" value="2753"/>
+      </amounts>
+    </income>
+
+    <income min="7100" max="7199">
+      <amounts>
+        <amount children="1" value="970"/>
+        <amount children="2" value="1561"/>
+        <amount children="3" value="1795"/>
+        <amount children="4" value="2085"/>
+        <amount children="5" value="2417"/>
+        <amount children="6" value="2758"/>
+      </amounts>
+    </income>
+
+    <income min="7200" max="7299">
+      <amounts>
+        <amount children="1" value="974"/>
+        <amount children="2" value="1574"/>
+        <amount children="3" value="1812"/>
+        <amount children="4" value="2104"/>
+        <amount children="5" value="2439"/>
+        <amount children="6" value="2764"/>
+      </amounts>
+    </income>
+
+    <income min="7300" max="7399">
+      <amounts>
+        <amount children="1" value="980"/>
+        <amount children="2" value="1587"/>
+        <amount children="3" value="1828"/>
+        <amount children="4" value="2123"/>
+        <amount children="5" value="2462"/>
+        <amount children="6" value="2769"/>
+      </amounts>
+    </income>
+
+    <income min="7400" max="7499">
+      <amounts>
+        <amount children="1" value="989"/>
+        <amount children="2" value="1600"/>
+        <amount children="3" value="1844"/>
+        <amount children="4" value="2142"/>
+        <amount children="5" value="2483"/>
+        <amount children="6" value="2775"/>
+      </amounts>
+    </income>
+
+    <income min="7500" max="7599">
+      <amounts>
+        <amount children="1" value="998"/>
+        <amount children="2" value="1613"/>
+        <amount children="3" value="1860"/>
+        <amount children="4" value="2160"/>
+        <amount children="5" value="2505"/>
+        <amount children="6" value="2781"/>
+      </amounts>
+    </income>
+
+    <income min="7600" max="7699">
+      <amounts>
+        <amount children="1" value="1006"/>
+        <amount children="2" value="1628"/>
+        <amount children="3" value="1877"/>
+        <amount children="4" value="2180"/>
+        <amount children="5" value="2528"/>
+        <amount children="6" value="2803"/>
+      </amounts>
+    </income>
+
+    <income min="7700" max="7799">
+      <amounts>
+        <amount children="1" value="1015"/>
+        <amount children="2" value="1643"/>
+        <amount children="3" value="1894"/>
+        <amount children="4" value="2199"/>
+        <amount children="5" value="2550"/>
+        <amount children="6" value="2833"/>
+      </amounts>
+    </income>
+
+    <income min="7800" max="7899">
+      <amounts>
+        <amount children="1" value="1023"/>
+        <amount children="2" value="1658"/>
+        <amount children="3" value="1911"/>
+        <amount children="4" value="2218"/>
+        <amount children="5" value="2572"/>
+        <amount children="6" value="2864"/>
+      </amounts>
+    </income>
+
+    <income min="7900" max="7999">
+      <amounts>
+        <amount children="1" value="1032"/>
+        <amount children="2" value="1673"/>
+        <amount children="3" value="1928"/>
+        <amount children="4" value="2237"/>
+        <amount children="5" value="2594"/>
+        <amount children="6" value="2894"/>
+      </amounts>
+    </income>
+
+    <income min="8000" max="8099">
+      <amounts>
+        <amount children="1" value="1040"/>
+        <amount children="2" value="1688"/>
+        <amount children="3" value="1944"/>
+        <amount children="4" value="2256"/>
+        <amount children="5" value="2616"/>
+        <amount children="6" value="2925"/>
+      </amounts>
+    </income>
+
+    <income min="8100" max="8199">
+      <amounts>
+        <amount children="1" value="1048"/>
+        <amount children="2" value="1703"/>
+        <amount children="3" value="1960"/>
+        <amount children="4" value="2274"/>
+        <amount children="5" value="2637"/>
+        <amount children="6" value="2955"/>
+      </amounts>
+    </income>
+
+    <income min="8200" max="8299">
+      <amounts>
+        <amount children="1" value="1056"/>
+        <amount children="2" value="1717"/>
+        <amount children="3" value="1976"/>
+        <amount children="4" value="2293"/>
+        <amount children="5" value="2658"/>
+        <amount children="6" value="2985"/>
+      </amounts>
+    </income>
+
+    <income min="8300 " max="8399">
+      <amounts>
+        <amount children="1" value="1064"/>
+        <amount children="2" value="1731"/>
+        <amount children="3" value="1992"/>
+        <amount children="4" value="2311"/>
+        <amount children="5" value="2679"/>
+        <amount children="6" value="3016"/>
+      </amounts>
+    </income>
+
+    <income min="8400" max="8499">
+      <amounts>
+        <amount children="1" value="1072"/>
+        <amount children="2" value="1746"/>
+        <amount children="3" value="2008"/>
+        <amount children="4" value="2328"/>
+        <amount children="5" value="2700"/>
+        <amount children="6" value="3046"/>
+      </amounts>
+    </income>
+
+    <income min="8500" max="8599">
+      <amounts>
+        <amount children="1" value="1080"/>
+        <amount children="2" value="1760"/>
+        <amount children="3" value="2023"/>
+        <amount children="4" value="2346"/>
+        <amount children="5" value="2720"/>
+        <amount children="6" value="3077"/>
+      </amounts>
+    </income>
+
+    <income min="8600" max="8699">
+      <amounts>
+        <amount children="1" value="1092"/>
+        <amount children="2" value="1780"/>
+        <amount children="3" value="2047"/>
+        <amount children="4" value="2374"/>
+        <amount children="5" value="2752"/>
+        <amount children="6" value="3107"/>
+      </amounts>
+    </income>
+
+    <income min="8700" max="8799">
+      <amounts>
+        <amount children="1" value="1105"/>
+        <amount children="2" value="1801"/>
+        <amount children="3" value="2071"/>
+        <amount children="4" value="2401"/>
+        <amount children="5" value="2784"/>
+        <amount children="6" value="3138"/>
+      </amounts>
+    </income>
+
+    <income min="8800" max="8899">
+      <amounts>
+        <amount children="1" value="1118"/>
+        <amount children="2" value="1822"/>
+        <amount children="3" value="2094"/>
+        <amount children="4" value="2429"/>
+        <amount children="5" value="2816"/>
+        <amount children="6" value="3168"/>
+      </amounts>
+    </income>
+
+    <income min="8900" max="8999">
+      <amounts>
+        <amount children="1" value="1130"/>
+        <amount children="2" value="1842"/>
+        <amount children="3" value="2118"/>
+        <amount children="4" value="2456"/>
+        <amount children="5" value="2848"/>
+        <amount children="6" value="3199"/>
+      </amounts>
+    </income>
+
+    <income min="9000" max="9099">
+      <amounts>
+        <amount children="1" value="1143"/>
+        <amount children="2" value="1863"/>
+        <amount children="3" value="2142"/>
+        <amount children="4" value="2484"/>
+        <amount children="5" value="2880"/>
+        <amount children="6" value="3223"/>
+      </amounts>
+    </income>
+
+    <income min="9100" max="9199">
+      <amounts>
+        <amount children="1" value="1156"/>
+        <amount children="2" value="1884"/>
+        <amount children="3" value="2166"/>
+        <amount children="4" value="2512"/>
+        <amount children="5" value="2912"/>
+        <amount children="6" value="3243"/>
+      </amounts>
+    </income>
+
+    <income min="9200" max="9299">
+      <amounts>
+        <amount children="1" value="1168"/>
+        <amount children="2" value="1904"/>
+        <amount children="3" value="2190"/>
+        <amount children="4" value="2539"/>
+        <amount children="5" value="2944"/>
+        <amount children="6" value="3263"/>
+      </amounts>
+    </income>
+
+    <income min="9300" max="9399">
+      <amounts>
+        <amount children="1" value="1181"/>
+        <amount children="2" value="1925"/>
+        <amount children="3" value="2213"/>
+        <amount children="4" value="2567"/>
+        <amount children="5" value="2976"/>
+        <amount children="6" value="3284"/>
+      </amounts>
+    </income>
+
+    <income min="9400" max="9499">
+      <amounts>
+        <amount children="1" value="1194"/>
+        <amount children="2" value="1946"/>
+        <amount children="3" value="2237"/>
+        <amount children="4" value="2594"/>
+        <amount children="5" value="3008"/>
+        <amount children="6" value="3304"/>
+      </amounts>
+    </income>
+
+    <income min="9500" max="9599">
+      <amounts>
+        <amount children="1" value="1207"/>
+        <amount children="2" value="1967"/>
+        <amount children="3" value="2261"/>
+        <amount children="4" value="2622"/>
+        <amount children="5" value="3031"/>
+        <amount children="6" value="3324"/>
+      </amounts>
+    </income>
+
+    <income min="9600" max="9699">
+      <amounts>
+        <amount children="1" value="1219"/>
+        <amount children="2" value="1987"/>
+        <amount children="3" value="2285"/>
+        <amount children="4" value="2650"/>
+        <amount children="5" value="3050"/>
+        <amount children="6" value="3345"/>
+      </amounts>
+    </income>
+
+    <income min="9700" max="9799">
+      <amounts>
+        <amount children="1" value="1232"/>
+        <amount children="2" value="2008"/>
+        <amount children="3" value="2309"/>
+        <amount children="4" value="2677"/>
+        <amount children="5" value="3069"/>
+        <amount children="6" value="3365"/>
+      </amounts>
+    </income>
+
+    <income min="9800" max="9899">
+      <amounts>
+        <amount children="1" value="1245"/>
+        <amount children="2" value="2029"/>
+        <amount children="3" value="2332"/>
+        <amount children="4" value="2705"/>
+        <amount children="5" value="3087"/>
+        <amount children="6" value="3385"/>
+      </amounts>
+    </income>
+
+    <income min="9900" max="9999">
+      <amounts>
+        <amount children="1" value="1257"/>
+        <amount children="2" value="2049"/>
+        <amount children="3" value="2356"/>
+        <amount children="4" value="2732"/>
+        <amount children="5" value="3106"/>
+        <amount children="6" value="3406"/>
+      </amounts>
+    </income>
+
+    <income min="10000" max="10099">
+      <amounts>
+        <amount children="1" value="1270"/>
+        <amount children="2" value="2070"/>
+        <amount children="3" value="2380"/>
+        <amount children="4" value="2760"/>
+        <amount children="5" value="3125"/>
+        <amount children="6" value="3426"/>
+      </amounts>
+    </income>
+
+    <income min="10100" max="10199">
+      <amounts>
+        <amount children="1" value="1283"/>
+        <amount children="2" value="2091"/>
+        <amount children="3" value="2404"/>
+        <amount children="4" value="2788"/>
+        <amount children="5" value="3144"/>
+        <amount children="6" value="3446"/>
+      </amounts>
+    </income>
+
+    <income min="10200" max="10299">
+      <amounts>
+        <amount children="1" value="1295"/>
+        <amount children="2" value="2111"/>
+        <amount children="3" value="2428"/>
+        <amount children="4" value="2815"/>
+        <amount children="5" value="3162"/>
+        <amount children="6" value="3467"/>
+      </amounts>
+    </income>
+
+    <income min="10300" max="10399">
+      <amounts>
+        <amount children="1" value="1308"/>
+        <amount children="2" value="2132"/>
+        <amount children="3" value="2451"/>
+        <amount children="4" value="2843"/>
+        <amount children="5" value="3181"/>
+        <amount children="6" value="3487"/>
+      </amounts>
+    </income>
+
+    <income min="10400" max="10499">
+      <amounts>
+        <amount children="1" value="1321"/>
+        <amount children="2" value="2153"/>
+        <amount children="3" value="2475"/>
+        <amount children="4" value="2870"/>
+        <amount children="5" value="3200"/>
+        <amount children="6" value="3507"/>
+      </amounts>
+    </income>
+
+    <income min="10500" max="10599">
+      <amounts>
+        <amount children="1" value="1334"/>
+        <amount children="2" value="2174"/>
+        <amount children="3" value="2499"/>
+        <amount children="4" value="2898"/>
+        <amount children="5" value="3218"/>
+        <amount children="6" value="3528"/>
+      </amounts>
+    </income>
+
+    <income min="10600" max="10699">
+      <amounts>
+        <amount children="1" value="1346"/>
+        <amount children="2" value="2194"/>
+        <amount children="3" value="2523"/>
+        <amount children="4" value="2921"/>
+        <amount children="5" value="3237"/>
+        <amount children="6" value="3548"/>
+      </amounts>
+    </income>
+
+    <income min="10700" max="10799">
+      <amounts>
+        <amount children="1" value="1359"/>
+        <amount children="2" value="2215"/>
+        <amount children="3" value="2547"/>
+        <amount children="4" value="2938"/>
+        <amount children="5" value="3256"/>
+        <amount children="6" value="3568"/>
+      </amounts>
+    </income>
+
+    <income min="10800" max="10899">
+      <amounts>
+        <amount children="1" value="1372"/>
+        <amount children="2" value="2236"/>
+        <amount children="3" value="2570"/>
+        <amount children="4" value="2955"/>
+        <amount children="5" value="3274"/>
+        <amount children="6" value="3589"/>
+      </amounts>
+    </income>
+
+    <income min="10900" max="10999">
+      <amounts>
+        <amount children="1" value="1384"/>
+        <amount children="2" value="2256"/>
+        <amount children="3" value="2594"/>
+        <amount children="4" value="2972"/>
+        <amount children="5" value="3293"/>
+        <amount children="6" value="3609"/>
+      </amounts>
+    </income>
+
+    <income min="11000" max="11099">
+      <amounts>
+        <amount children="1" value="1397"/>
+        <amount children="2" value="2277"/>
+        <amount children="3" value="2618"/>
+        <amount children="4" value="2989"/>
+        <amount children="5" value="3312"/>
+        <amount children="6" value="3629"/>
+      </amounts>
+    </income>
+
+    <income min="11100" max="11199">
+      <amounts>
+        <amount children="1" value="1410"/>
+        <amount children="2" value="2294"/>
+        <amount children="3" value="2642"/>
+        <amount children="4" value="3006"/>
+        <amount children="5" value="3331"/>
+        <amount children="6" value="3649"/>
+      </amounts>
+    </income>
+
+    <income min="11200" max="11299">
+      <amounts>
+        <amount children="1" value="1422"/>
+        <amount children="2" value="2306"/>
+        <amount children="3" value="2666"/>
+        <amount children="4" value="3023"/>
+        <amount children="5" value="3349"/>
+        <amount children="6" value="3667"/>
+      </amounts>
+    </income>
+
+    <income min="11300" max="11399">
+      <amounts>
+        <amount children="1" value="1435"/>
+        <amount children="2" value="2319"/>
+        <amount children="3" value="2689"/>
+        <amount children="4" value="3040"/>
+        <amount children="5" value="3366"/>
+        <amount children="6" value="3686"/>
+      </amounts>
+    </income>
+
+    <income min="11400" max="11499">
+      <amounts>
+        <amount children="1" value="1448"/>
+        <amount children="2" value="2331"/>
+        <amount children="3" value="2713"/>
+        <amount children="4" value="3055"/>
+        <amount children="5" value="3383"/>
+        <amount children="6" value="3705"/>
+      </amounts>
+    </income>
+
+    <income min="11500" max="11599">
+      <amounts>
+        <amount children="1" value="1461"/>
+        <amount children="2" value="2344"/>
+        <amount children="3" value="2735"/>
+        <amount children="4" value="3071"/>
+        <amount children="5" value="3400"/>
+        <amount children="6" value="3723"/>
+      </amounts>
+    </income>
+
+    <income min="11600" max="11699">
+      <amounts>
+        <amount children="1" value="1473"/>
+        <amount children="2" value="2356"/>
+        <amount children="3" value="2748"/>
+        <amount children="4" value="3087"/>
+        <amount children="5" value="3417"/>
+        <amount children="6" value="3742"/>
+      </amounts>
+    </income>
+
+    <income min="11700" max="11799">
+      <amounts>
+        <amount children="1" value="1486"/>
+        <amount children="2" value="2367"/>
+        <amount children="3" value="2762"/>
+        <amount children="4" value="3102"/>
+        <amount children="5" value="3435"/>
+        <amount children="6" value="3761"/>
+      </amounts>
+    </income>
+
+    <income min="11800" max="11899">
+      <amounts>
+        <amount children="1" value="1499"/>
+        <amount children="2" value="2378"/>
+        <amount children="3" value="2775"/>
+        <amount children="4" value="3116"/>
+        <amount children="5" value="3452"/>
+        <amount children="6" value="3780"/>
+      </amounts>
+    </income>
+
+    <income min="11900" max="11999">
+      <amounts>
+        <amount children="1" value="1511"/>
+        <amount children="2" value="2389"/>
+        <amount children="3" value="2788"/>
+        <amount children="4" value="3131"/>
+        <amount children="5" value="3469"/>
+        <amount children="6" value="3798"/>
+      </amounts>
+    </income>
+
+    <income min="12000" max="12099">
+      <amounts>
+        <amount children="1" value="1524"/>
+        <amount children="2" value="2401"/>
+        <amount children="3" value="2801"/>
+        <amount children="4" value="3146"/>
+        <amount children="5" value="3485"/>
+        <amount children="6" value="3817"/>
+      </amounts>
+    </income>
+
+    <income min="12100" max="12199">
+      <amounts>
+        <amount children="1" value="1537"/>
+        <amount children="2" value="2412"/>
+        <amount children="3" value="2814"/>
+        <amount children="4" value="3160"/>
+        <amount children="5" value="3501"/>
+        <amount children="6" value="3836"/>
+      </amounts>
+    </income>
+
+    <income min="12200" max="12299">
+      <amounts>
+        <amount children="1" value="1549"/>
+        <amount children="2" value="2423"/>
+        <amount children="3" value="2828"/>
+        <amount children="4" value="3175"/>
+        <amount children="5" value="3517"/>
+        <amount children="6" value="3854"/>
+      </amounts>
+    </income>
+
+    <income min="12300" max="12399">
+      <amounts>
+        <amount children="1" value="1562"/>
+        <amount children="2" value="2434"/>
+        <amount children="3" value="2841"/>
+        <amount children="4" value="3190"/>
+        <amount children="5" value="3534"/>
+        <amount children="6" value="3871"/>
+      </amounts>
+    </income>
+
+    <income min="12400" max="12499">
+      <amounts>
+        <amount children="1" value="1575"/>
+        <amount children="2" value="2445"/>
+        <amount children="3" value="2854"/>
+        <amount children="4" value="3205"/>
+        <amount children="5" value="3550"/>
+        <amount children="6" value="3889"/>
+      </amounts>
+    </income>
+
+    <income min="12500" max="12599">
+      <amounts>
+        <amount children="1" value="1588"/>
+        <amount children="2" value="2456"/>
+        <amount children="3" value="2867"/>
+        <amount children="4" value="3219"/>
+        <amount children="5" value="3566"/>
+        <amount children="6" value="3907"/>
+      </amounts>
+    </income>
+
+    <income min="12600" max="12699">
+      <amounts>
+        <amount children="1" value="1600"/>
+        <amount children="2" value="2467"/>
+        <amount children="3" value="2880"/>
+        <amount children="4" value="3234"/>
+        <amount children="5" value="3582"/>
+        <amount children="6" value="3924"/>
+      </amounts>
+    </income>
+
+    <income min="12700" max="12799">
+      <amounts>
+        <amount children="1" value="1613"/>
+        <amount children="2" value="2478"/>
+        <amount children="3" value="2894"/>
+        <amount children="4" value="3249"/>
+        <amount children="5" value="3598"/>
+        <amount children="6" value="3942"/>
+      </amounts>
+    </income>
+
+    <income min="12800" max="12899">
+      <amounts>
+        <amount children="1" value="1626"/>
+        <amount children="2" value="2489"/>
+        <amount children="3" value="2907"/>
+        <amount children="4" value="3264"/>
+        <amount children="5" value="3615"/>
+        <amount children="6" value="3960"/>
+      </amounts>
+    </income>
+
+    <income min="12900" max="12999">
+      <amounts>
+        <amount children="1" value="1638"/>
+        <amount children="2" value="2500"/>
+        <amount children="3" value="2920"/>
+        <amount children="4" value="3278"/>
+        <amount children="5" value="3631"/>
+        <amount children="6" value="3977"/>
+      </amounts>
+    </income>
+
+    <income min="13000" max="13099">
+      <amounts>
+        <amount children="1" value="1651"/>
+        <amount children="2" value="2512"/>
+        <amount children="3" value="2933"/>
+        <amount children="4" value="3293"/>
+        <amount children="5" value="3647"/>
+        <amount children="6" value="3995"/>
+      </amounts>
+    </income>
+
+    <income min="13100" max="13199">
+      <amounts>
+        <amount children="1" value="1664"/>
+        <amount children="2" value="2523"/>
+        <amount children="3" value="2946"/>
+        <amount children="4" value="3308"/>
+        <amount children="5" value="3663"/>
+        <amount children="6" value="4012"/>
+      </amounts>
+    </income>
+
+    <income min="13200" max="13299">
+      <amounts>
+        <amount children="1" value="1676"/>
+        <amount children="2" value="2534"/>
+        <amount children="3" value="2960"/>
+        <amount children="4" value="3322"/>
+        <amount children="5" value="3679"/>
+        <amount children="6" value="4030"/>
+      </amounts>
+    </income>
+
+    <income min="13300" max="13399">
+      <amounts>
+        <amount children="1" value="1689"/>
+        <amount children="2" value="2545"/>
+        <amount children="3" value="2973"/>
+        <amount children="4" value="3337"/>
+        <amount children="5" value="3696"/>
+        <amount children="6" value="4048"/>
+      </amounts>
+    </income>
+
+    <income min="13400" max="13499">
+      <amounts>
+        <amount children="1" value="1702"/>
+        <amount children="2" value="2556"/>
+        <amount children="3" value="2986"/>
+        <amount children="4" value="3352"/>
+        <amount children="5" value="3712"/>
+        <amount children="6" value="4065"/>
+      </amounts>
+    </income>
+
+    <income min="13500" max="13599">
+      <amounts>
+        <amount children="1" value="1715"/>
+        <amount children="2" value="2567"/>
+        <amount children="3" value="2999"/>
+        <amount children="4" value="3367"/>
+        <amount children="5" value="3728"/>
+        <amount children="6" value="4083"/>
+      </amounts>
+    </income>
+
+    <income min="13600" max="13699">
+      <amounts>
+        <amount children="1" value="1727"/>
+        <amount children="2" value="2578"/>
+        <amount children="3" value="3012"/>
+        <amount children="4" value="3381"/>
+        <amount children="5" value="3744"/>
+        <amount children="6" value="4100"/>
+      </amounts>
+    </income>
+
+    <income min="13700" max="13799">
+      <amounts>
+        <amount children="1" value="1740"/>
+        <amount children="2" value="2589"/>
+        <amount children="3" value="3026"/>
+        <amount children="4" value="3396"/>
+        <amount children="5" value="3760"/>
+        <amount children="6" value="4118"/>
+      </amounts>
+    </income>
+
+    <income min="13800" max="13899">
+      <amounts>
+        <amount children="1" value="1753"/>
+        <amount children="2" value="2600"/>
+        <amount children="3" value="3039"/>
+        <amount children="4" value="3411"/>
+        <amount children="5" value="3777"/>
+        <amount children="6" value="4136"/>
+      </amounts>
+    </income>
+
+    <income min="13900" max="13999">
+      <amounts>
+        <amount children="1" value="1765"/>
+        <amount children="2" value="2611"/>
+        <amount children="3" value="3052"/>
+        <amount children="4" value="3425"/>
+        <amount children="5" value="3793"/>
+        <amount children="6" value="4153"/>
+      </amounts>
+    </income>
+
+    <income min="14000" max="14099">
+      <amounts>
+        <amount children="1" value="1778"/>
+        <amount children="2" value="2623"/>
+        <amount children="3" value="3065"/>
+        <amount children="4" value="3440"/>
+        <amount children="5" value="3809"/>
+        <amount children="6" value="4171"/>
+      </amounts>
+    </income>
+
+    <income min="14100" max="14199">
+      <amounts>
+        <amount children="1" value="1791"/>
+        <amount children="2" value="2634"/>
+        <amount children="3" value="3078"/>
+        <amount children="4" value="3455"/>
+        <amount children="5" value="3825"/>
+        <amount children="6" value="4189"/>
+      </amounts>
+    </income>
+
+    <income min="14200" max="14299">
+      <amounts>
+        <amount children="1" value="1803"/>
+        <amount children="2" value="2645"/>
+        <amount children="3" value="3092"/>
+        <amount children="4" value="3470"/>
+        <amount children="5" value="3841"/>
+        <amount children="6" value="4206"/>
+      </amounts>
+    </income>
+
+    <income min="14300" max="14399">
+      <amounts>
+        <amount children="1" value="1816"/>
+        <amount children="2" value="2656"/>
+        <amount children="3" value="3105"/>
+        <amount children="4" value="3484"/>
+        <amount children="5" value="3858"/>
+        <amount children="6" value="4224"/>
+      </amounts>
+    </income>
+
+    <income min="14400" max="14499">
+      <amounts>
+        <amount children="1" value="1829"/>
+        <amount children="2" value="2667"/>
+        <amount children="3" value="3118"/>
+        <amount children="4" value="3499"/>
+        <amount children="5" value="3874"/>
+        <amount children="6" value="4239"/>
+      </amounts>
+    </income>
+
+    <income min="14500" max="14599">
+      <amounts>
+        <amount children="1" value="1842"/>
+        <amount children="2" value="2678"/>
+        <amount children="3" value="3131"/>
+        <amount children="4" value="3514"/>
+        <amount children="5" value="3889"/>
+        <amount children="6" value="4253"/>
+      </amounts>
+    </income>
+
+    <income min="14600" max="14699">
+      <amounts>
+        <amount children="1" value="1854"/>
+        <amount children="2" value="2689"/>
+        <amount children="3" value="3144"/>
+        <amount children="4" value="3529"/>
+        <amount children="5" value="3902"/>
+        <amount children="6" value="4268"/>
+      </amounts>
+    </income>
+
+    <income min="14700" max="14799">
+      <amounts>
+        <amount children="1" value="1864"/>
+        <amount children="2" value="2700"/>
+        <amount children="3" value="3158"/>
+        <amount children="4" value="3541"/>
+        <amount children="5" value="3916"/>
+        <amount children="6" value="4282"/>
+      </amounts>
+    </income>
+
+    <income min="14800" max="14899">
+      <amounts>
+        <amount children="1" value="1872"/>
+        <amount children="2" value="2711"/>
+        <amount children="3" value="3170"/>
+        <amount children="4" value="3553"/>
+        <amount children="5" value="3929"/>
+        <amount children="6" value="4297"/>
+      </amounts>
+    </income>
+
+    <income min="14900" max="14999">
+      <amounts>
+        <amount children="1" value="1879"/>
+        <amount children="2" value="2722"/>
+        <amount children="3" value="3181"/>
+        <amount children="4" value="3565"/>
+        <amount children="5" value="3942"/>
+        <amount children="6" value="4311"/>
+      </amounts>
+    </income>
+
+    <income min="15000" max="99999999">
+      <amounts>
+        <amount children="1" value="1883"/>
+        <amount children="2" value="2727"/>
+        <amount children="3" value="3186"/>
+        <amount children="4" value="3571"/>
+        <amount children="5" value="3949"/>
+        <amount children="6" value="4319"/>
       </amounts>
     </income>
   </incomes>
