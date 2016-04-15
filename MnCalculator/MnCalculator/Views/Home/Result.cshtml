@@ -68,9 +68,8 @@
     </div>
   </div>
 
-
   <div class="col-md-12 col-sm-12 col-xs-12 category">
-    <h2>Adjustments</h2>
+    <h2>Parenting Time</h2>
     <div class="row resultRow">
       <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.Overnights)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentA.Overnights)</span>
@@ -83,41 +82,64 @@
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentB.PercentageOfParentingTime)%</span>
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.Combined.PercentageOfParentingTime)%</span>
     </div>
+  </div>
 
+  <div class="col-md-12 col-sm-12 col-xs-12 category">
+    <h2>Adjustments</h2>
+    <div class="row resultRow">
+      <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.NumberOfNonJointChildren)</span>
+      <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentA.NumberOfNonJointChildren)</span>
+      <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentB.NumberOfNonJointChildren)</span>
+      <span class="col-md-2 col-sm-2 col-xs-2">----</span>
+    </div>
+    <div class="row resultRow">
+      <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.DeductionForNonJointChildren)</span>
+      <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentA.DeductionForNonJointChildren)</span>
+      <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentB.DeductionForNonJointChildren)</span>
+      <span class="col-md-2 col-sm-2 col-xs-2">----</span>
+    </div>
     <div class="row resultRow">
       <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.PicsAmount)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.PicsAmount)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.PicsAmount)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.Combined.PicsAmount)</span>
     </div>
-
     <div class="row resultRow">
       <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.PicsPercentage)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentA.PicsPercentage)%</span>
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.ParentB.PicsPercentage)%</span>
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.Combined.PicsPercentage)%</span>
     </div>
-
     <div class="row resultRow">
       <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.CombinedBasicSupportObligation)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">----</span>
       <span class="col-md-2 col-sm-2 col-xs-2">----</span>
       <span class="col-md-2 col-sm-2 col-xs-2">@Html.DisplayFor(model => model.CombinedBasicSupportObligation)</span>
     </div>
-
     <div class="row resultRow">
       <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.ProRataBasicSupportObligation)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.ProRataBasicSupportObligation)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.ProRataBasicSupportObligation)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">----</span>
     </div>
-
     <div class="row resultRow">
       <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.BasicSupportObligationAfterAdjustment)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.BasicSupportObligationAfterAdjustment)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.BasicSupportObligationAfterAdjustment)</span>
       <span class="col-md-2 col-sm-2 col-xs-2">----</span>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
 

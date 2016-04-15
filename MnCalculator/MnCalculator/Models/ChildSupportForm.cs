@@ -91,7 +91,7 @@ namespace MnCalculator.Models
 
         [Display(Name = "What is the number of nonjoint child(ren) living in the home?")]
         [Range(typeof(int), "0", "50", ErrorMessage = "Must be number less than 50.")]
-        public decimal ParentBNonJointChildren { get; set; }
+        public int ParentBNonJointChildren { get; set; }
 
 
       public IEnumerator GetEnumerator()

@@ -54,10 +54,11 @@ namespace MnCalculator.Models
           SpousalMaintenance = (double)input.ParentASpousalMaintenance,
           NonJointChildSupport = (double)input.ParentANonJointChildSupport,
           GrossIncome = Math.Round((double) parentAGrossIncome, 0),
+          NumberOfNonJointChildren = input.ParentANonJointChildren,
           PercentageOfParentingTime =
                         Math.Round(input.ParentAOvernights / (input.ParentAOvernights + parentBOvernights), 3) * 100,
           Overnights = Math.Round(input.ParentAOvernights, 1),
-          PicsAmount = (double)input.ParentAMonthlyIncomeReceived, //todo: subtract other child
+          PicsAmount = (double) parentAGrossIncome, 
           PicsPercentage =
                         (double)
                             (Math.Round(input.ParentAMonthlyIncomeReceived / (input.ParentAMonthlyIncomeReceived + input.ParentBMonthlyIncomeReceived),
@@ -72,10 +73,11 @@ namespace MnCalculator.Models
           SpousalMaintenance = (double)input.ParentBSpousalMaintenance,
           NonJointChildSupport = (double)input.ParentBNonJointChildSupport,
           GrossIncome = Math.Round((double) parentBGrossIncome, 0),
+          NumberOfNonJointChildren = input.ParentBNonJointChildren,
           PercentageOfParentingTime =
                         Math.Round(parentBOvernights / (input.ParentAOvernights + parentBOvernights), 3) * 100,
           Overnights = parentBOvernights,
-          PicsAmount = (double)input.ParentBMonthlyIncomeReceived, //todo: subtract other child
+          PicsAmount = (double)parentBGrossIncome, 
           PicsPercentage =
                         (double)
                             (Math.Round(input.ParentBMonthlyIncomeReceived / (input.ParentAMonthlyIncomeReceived + input.ParentBMonthlyIncomeReceived),
@@ -87,8 +89,6 @@ namespace MnCalculator.Models
           GrossIncome = (double)Math.Round(input.ParentAMonthlyIncomeReceived + input.ParentBMonthlyIncomeReceived, 0),
           PercentageOfParentingTime = 100,
           Overnights = input.ParentAOvernights + parentBOvernights,
-          PicsAmount = (double)(input.ParentAMonthlyIncomeReceived + input.ParentBMonthlyIncomeReceived),
-          //todo: subtract other child
           PicsPercentage = 100
         },
         NumberOfChildren = input.NumberOfChildren,
@@ -96,16 +96,35 @@ namespace MnCalculator.Models
         CaseNumber = input.CaseNumber
       };
 
-      //lookup the obligation amount from XML
+      //lookup the obligation amount from XML and calculate PICS
       var serializer = new XmlSerializer(typeof(Obligation));
       using (var reader = XmlReader.Create(HttpContext.Current.Server.MapPath("~/SupportObligation.xml")))
       {
         var obligationData = (Obligation)serializer.Deserialize(reader);
+        model.ParentA.PicsAmount = (double)parentAGrossIncome;
+        model.ParentB.PicsAmount = (double)parentBGrossIncome;
+
+        if (model.ParentA.NumberOfNonJointChildren > 0) // update the discount, if applicable
+        {
+          model.ParentA.DeductionForNonJointChildren = obligationData.Incomes.Where(i => model.ParentA.GrossIncome >= i.Min && model.ParentA.GrossIncome <= i.Max).SelectMany(i => i.Amounts).First(x => x.Children == model.ParentA.NumberOfNonJointChildren).Value / 2;
+          model.ParentA.PicsAmount = model.ParentA.PicsAmount - model.ParentA.DeductionForNonJointChildren;
+        }
+
+        if (model.ParentB.NumberOfNonJointChildren > 0) // update the discount, if applicable
+        {
+          model.ParentA.DeductionForNonJointChildren = obligationData.Incomes.Where(i => model.Combined.PicsAmount >= i.Min && model.Combined.PicsAmount <= i.Max).SelectMany(i => i.Amounts).First(x => x.Children == model.ParentB.NumberOfNonJointChildren).Value / 2;
+          model.ParentA.PicsAmount = model.ParentA.PicsAmount - model.ParentA.DeductionForNonJointChildren;
+        }
+
+        model.Combined.PicsAmount = model.ParentA.PicsAmount + model.ParentB.PicsAmount;
+        model.ParentA.PicsPercentage = Math.Round(model.ParentA.PicsAmount / model.Combined.PicsAmount, 3) * 100;
+        model.ParentB.PicsPercentage = Math.Round(model.ParentB.PicsAmount / model.Combined.PicsAmount, 3) * 100;
+      
         model.CombinedBasicSupportObligation = obligationData.Incomes.Where(i => model.Combined.PicsAmount >= i.Min && model.Combined.PicsAmount <= i.Max).SelectMany(i => i.Amounts).First(x => x.Children == input.NumberOfChildren).Value;
       }
 
-      model.ParentA.ProRataBasicSupportObligation = (double)Math.Round(input.ParentAMonthlyIncomeReceived / (input.ParentAMonthlyIncomeReceived + input.ParentBMonthlyIncomeReceived) * model.CombinedBasicSupportObligation, 2);
-      model.ParentB.ProRataBasicSupportObligation = (double)Math.Round(input.ParentBMonthlyIncomeReceived / (input.ParentAMonthlyIncomeReceived + input.ParentBMonthlyIncomeReceived) * model.CombinedBasicSupportObligation, 2);
+      model.ParentA.ProRataBasicSupportObligation = Math.Round(model.ParentA.PicsPercentage / 100 * (double) model.CombinedBasicSupportObligation, 2);
+      model.ParentB.ProRataBasicSupportObligation = Math.Round(model.ParentB.PicsPercentage / 100 * (double) model.CombinedBasicSupportObligation, 2);
 
       //calculate the parenting time adjustment
       var parentingTimeAdjusment = ((Math.Pow(parentBOvernights, 3.00) * model.ParentA.ProRataBasicSupportObligation) -
@@ -167,6 +186,12 @@ namespace MnCalculator.Models
 
     [Display(Name = "Obligation After Parenting Time Adjustment")]
     public double BasicSupportObligationAfterAdjustment { get; set; }
+
+    [Display(Name = "2a.Number of Nonjoint Child(ren) in the Home(Maximum number allowed is 2)")]
+    public int NumberOfNonJointChildren { get; set; }
+
+    [Display(Name = "2b. Deduction for Nonjoint Child(ren) in the Home")]
+    public double DeductionForNonJointChildren { get; set; }
   }
 
   public class Income
