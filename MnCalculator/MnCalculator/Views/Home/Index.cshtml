@@ -1,111 +1,184 @@
 ﻿@model MnCalculator.Models.ChildSupportForm
 @{
-    ViewBag.Title = "Minnesota Child Support Calculator - Bill HF2889";
+  ViewBag.Title = "Minnesota Child Support Calculator - Bill HF2889";
 }
 
 <div class="jumbotron">
-    <h1>Minnesota Child Support Calculator</h1>
-    <p class="lead">
-        This calculator demostrates the calculated outcomes of Minnesota House Bill HF2889.  HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.  <br />To view the current calculator in effect as of @DateTime.Now.ToShortDateString()
-        <a href="http://childsupportcalculator.dhs.state.mn.us/" title="Minnesota Child Support Calculator">click here</a>
-    </p>
-    <p><a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" class="btn btn-primary btn-lg" title="Minnesota House Bill HF2889">See MN House Bill HF2889 &raquo;</a></p>
+  <h1>Minnesota Child Support Calculator</h1>
+  <p class="lead">
+    This calculator demostrates the calculated outcomes of Minnesota House Bill HF2889.  HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.  <br />To view the current calculator in effect as of @DateTime.Now.ToShortDateString()
+    <a href="http://childsupportcalculator.dhs.state.mn.us/" title="Minnesota Child Support Calculator">click here</a>
+  </p>
+  <p><a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" class="btn btn-primary btn-lg" title="Minnesota House Bill HF2889">See MN House Bill HF2889 &raquo;</a></p>
 </div>
 
 
 <div class="form-horizontal">
-    <h2>Minnesota Child Support Calculator</h2>
-    @using (Html.BeginForm("Result", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
+  <h2>Minnesota Child Support Calculator</h2>
+  @using (Html.BeginForm("Result", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+  {
+
+    <div class="form-group">
+      @Html.LabelFor(model => model.ParentA, new { @class = "control-label col-md-12" })
+      <div class="col-md-12">
+        @Html.TextBoxFor(m => m.ParentA, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ParentA, "", new { @class = "text-danger" })
+      </div>
+    </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ParentA, new { @class = "control-label col-md-12" })
-            <div class="col-md-12">
-                @Html.TextBoxFor(m => m.ParentA, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ParentA, "", new { @class = "text-danger" })
-            </div>
+          @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-12" })
+          <div class="col-md-12">
+            @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
+          </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-12" })
-            <div class="col-md-12">
-                @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
-            </div>
+          @Html.LabelFor(model => model.CaseNumber, new { @class = "control-label col-md-12" })
+          <div class="col-md-12">
+            @Html.TextBoxFor(m => m.CaseNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CaseNumber, "", new { @class = "text-danger" })
+          </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CaseNumber, new { @class = "control-label col-md-12" })
-            <div class="col-md-12">
-                @Html.TextBoxFor(m => m.CaseNumber, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CaseNumber, "", new { @class = "text-danger" })
-            </div>
+          @Html.LabelFor(model => model.CourtFileNumber, new { @class = "control-label col-md-12" })
+          <div class="col-md-12">
+            @Html.TextBoxFor(m => m.CourtFileNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CourtFileNumber, "", new { @class = "text-danger" })
+          </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CourtFileNumber, new { @class = "control-label col-md-12" })
-            <div class="col-md-12">
-                @Html.TextBoxFor(m => m.CourtFileNumber, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CourtFileNumber, "", new { @class = "text-danger" })
-            </div>
+          @Html.LabelFor(model => model.NumberOfChildren, new { @class = "control-label col-md-12" })
+          <div class="col-md-12">
+            @Html.TextBoxFor(m => m.NumberOfChildren, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.NumberOfChildren, "", new { @class = "text-danger" })
+          </div>
         </div>
+
+        <div class="form-group bottomDottedBorder">
+          <span class="col-md-8 col-sm-8 col-xs-6">&nbsp;</span>
+          <span class="col-md-2 col-sm-2 col-xs-3">Parent A</span>
+          <span class="col-md-2 col-sm-2 col-xs-3">Parent B</span>
+        </div>
+
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentAMonthlyIncomeReceived, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentAMonthlyIncomeReceived, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentAMonthlyIncomeReceived, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBMonthlyIncomeReceived, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBMonthlyIncomeReceived, "", new { @class = "text-danger" })
+          </div>
+        </div>
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentAOvernights, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentAOvernights, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentAOvernights, "", new {@class = "text-danger"})
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        <span id="parentBOvernights">182.5</span>
+      </div>
+    </div>
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentAPotentialIncome, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentAPotentialIncome, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentAPotentialIncome, "", new {@class = "text-danger"})
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentBPotentialIncome, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentBPotentialIncome, "", new {@class = "text-danger"})
+      </div>
+    </div>
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentASocialSecurityBenefits, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentASocialSecurityBenefits, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentASocialSecurityBenefits, "", new {@class = "text-danger"})
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentBSocialSecurityBenefits, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentBSocialSecurityBenefits, "", new {@class = "text-danger"})
+      </div>
+    </div>
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.IsParentBRepresentativePayee, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+      <div class="col-md-4 col-sm-4 col-xs-6">
+        @Html.RadioButtonFor(m => m.IsParentBRepresentativePayee, "Yes", new { id = "payeeYes" })
+        @Html.Label("payeeYes", "Yes", new { @class = "radio-label" })
+        @Html.RadioButtonFor(m => m.IsParentBRepresentativePayee, "No", new { id = "payeeNo", Checked = "checked" })
+        @Html.Label("payeeNo", "No", new {@class= "radio-label" })
+        @Html.ValidationMessageFor(model => model.IsParentBRepresentativePayee, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentASpousalMaintenance, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentASpousalMaintenance, new { @class = "form-control smallWidth" })
+        @Html.ValidationMessageFor(model => model.ParentASpousalMaintenance, "", new { @class = "text-danger" })
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentBSpousalMaintenance, new { @class = "form-control smallWidth" })
+        @Html.ValidationMessageFor(model => model.ParentBSpousalMaintenance, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentANonJointChildSupport, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentANonJointChildSupport, new { @class = "form-control smallWidth" })
+        @Html.ValidationMessageFor(model => model.ParentANonJointChildSupport, "", new { @class = "text-danger" })
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentBNonJointChildSupport, new { @class = "form-control smallWidth" })
+        @Html.ValidationMessageFor(model => model.ParentBNonJointChildSupport, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentANonJointChildren, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentANonJointChildren, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentANonJointChildren, "", new {@class = "text-danger"})
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentBNonJointChildren, new {@class = "form-control smallWidth"})
+        @Html.ValidationMessageFor(model => model.ParentBNonJointChildren, "", new {@class = "text-danger"})
+      </div>
+    </div>
+
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NumberOfChildren, new { @class = "control-label col-md-12" })
-            <div class="col-md-12">
-                @Html.TextBoxFor(m => m.NumberOfChildren, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.NumberOfChildren, "", new { @class = "text-danger" })
-            </div>
+          <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Calculate" class="btn btn-primary" />
+          </div>
         </div>
 
-        <div class="form-group">
-            <span class="col-md-4 col-sm-4 col-xs-4">&nbsp;</span>
-            <span class="col-md-4 col-sm-4 col-xs-4">Parent A</span>
-            <span class="col-md-4 col-sm-4 col-xs-4">Parent B</span>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ParentAGrossIncome, new { @class = "control-label col-md-4 col-sm-4 col-xs-4" })
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                @Html.TextBoxFor(m => m.ParentAGrossIncome, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ParentAGrossIncome, "", new { @class = "text-danger" })
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                @Html.TextBoxFor(m => m.ParentBGrossIncome, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ParentBGrossIncome, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ParentAOvernights, new { @class = "control-label col-md-4 col-sm-4 col-xs-4" })
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                @Html.TextBoxFor(m => m.ParentAOvernights, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ParentAOvernights, "", new { @class = "text-danger" })
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <span id="parentBOvernights">182.5</span>
-            </div>
-        </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Calculate" class="btn btn-primary" />
-                </div>
-            </div>
-           
-    }
+  }
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/unobtrusive")
-    <script>
-        $(document).ready(function () {
-            $('#ParentAOvernights').on('input', function () {
-                var parentBNights = 365 - $('#ParentAOvernights').val();
-                isNaN(parentBNights) ? $('#parentBOvernights').text("?"): $('#parentBOvernights').text(parentBNights);
-            });
-        });
-    </script>
+  @Scripts.Render("~/bundles/jqueryval")
+  @Scripts.Render("~/bundles/unobtrusive")
+  <script>
+    $(document).ready(function () {
+      $('#ParentAOvernights').on('input', function () {
+        var parentBNights = 365 - $('#ParentAOvernights').val();
+        isNaN(parentBNights) ? $('#parentBOvernights').text("?") : $('#parentBOvernights').text(parentBNights);
+      });
+    });
+  </script>
 }
 

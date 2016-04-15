@@ -38,12 +38,9 @@
 .form-horizontal .control-label {
     text-align: left;
     font-size: 3vw;
+  color: #333;
 }
 
-.form-horizontal .text-danger {
-     font-size: 2.5vw;
-    line-height: 1em;
-}
 
 .jumbotron {
     padding-top: 28px;
@@ -59,24 +56,50 @@
 }
 
 #parentBOvernights {
-    padding-top: 5px;
+    padding-top: 3px;
     padding-left: 10px;
     display: inline-block;
+    font-size: 13px
 }
 
 h2 {
     font-size: 20px;
 }
+
+.form-group {
+  margin-bottom: 5px;
+}
+.form-group.bottomDottedBorder {
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #ccc;
+}
+.form-control {
+  height: 25px;
+  padding: 2px 10px;
+  font-size: 13px;
+}
+.form-horizontal .text-danger {
+     font-size: 2.5vw;
+    line-height: 1em;
+}
+.radio-label {
+  font-weight: normal;
+  margin-right: 20px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 200px;
+}
+input.smallWidth {
+  max-width: 80px;
 }
 
 @media screen and (min-width: 400px) {
     .form-horizontal .control-label {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .form-horizontal .text-danger {

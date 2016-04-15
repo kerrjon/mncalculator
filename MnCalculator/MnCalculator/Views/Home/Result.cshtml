@@ -21,13 +21,45 @@
         </dl>
     </div>
 
-    <div class="row resultRow headerRow">
-        <span class="col-md-6 col-sm-6 col-xs-6">&nbsp;</span>
-        <span class="col-md-2 col-sm-2 col-xs-2">Parent A</span>
-        <span class="col-md-2 col-sm-2 col-xs-2">Parent B</span>
-        <span class="col-md-2 col-sm-2 col-xs-2">Combined</span>
-    </div>
-    <div class="row resultRow">
+  <div class="row resultRow headerRow">
+    <span class="col-md-6 col-sm-6 col-xs-6">&nbsp;</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">Parent A</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">Parent B</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">Combined</span>
+  </div>
+
+  <div class="row resultRow">
+    <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.MonthlyIncomeReceived)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.MonthlyIncomeReceived)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.MonthlyIncomeReceived)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">----</span>
+  </div>
+  <div class="row resultRow">
+    <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.SocialSecurityBenefits)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.SocialSecurityBenefits)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.SocialSecurityBenefits)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">----</span>
+  </div>
+  <div class="row resultRow">
+    <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.PotenialIncome)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.PotenialIncome)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.PotenialIncome)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">----</span>
+  </div>
+  <div class="row resultRow">
+    <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.SpousalMaintenance)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.SpousalMaintenance)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.SpousalMaintenance)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">----</span>
+  </div>
+  <div class="row resultRow">
+    <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.NonJointChildSupport)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.NonJointChildSupport)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.NonJointChildSupport)</span>
+    <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.Combined.NonJointChildSupport)</span>
+  </div>
+
+  <div class="row resultRow">
         <span class="col-md-6 col-sm-6 col-xs-6">@Html.DisplayNameFor(model => model.ParentA.GrossIncome)</span>
         <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentA.GrossIncome)</span>
         <span class="col-md-2 col-sm-2 col-xs-2">$@Html.DisplayFor(model => model.ParentB.GrossIncome)</span>
