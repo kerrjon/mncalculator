@@ -25,6 +25,24 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+a {
+  color: #4164be;
+}
+
+.navbar-inverse {
+  background-color: #4366c0;
+  border-color:#284695
+ 
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+   color: #fff;
+}
+
+  .navbar-inverse .navbar-brand:hover,
+  .navbar-inverse .navbar-nav > li > a:hover {
+    color: #f0f0f0;
+  }
 
 .resultRow:nth-of-type(odd) {
     background-color: #f0f0f0;
@@ -69,6 +87,7 @@
 
 .lead {
     font-size: 14px;
+  color: #000;
 }
 
 #parentBOvernights,
@@ -142,4 +161,10 @@ input.smallWidth {
     .form-horizontal .text-danger {
         font-size: 11px;
     }
+}
+@media screen and (max-width: 400px) {
+
+     .navbar-inverse .navbar-brand {
+       font-size: 13px;
+     }
 }

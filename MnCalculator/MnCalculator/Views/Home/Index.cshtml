@@ -8,8 +8,11 @@
 <div class="jumbotron">
   <h1>Minnesota Child Support Calculator</h1>
   <p class="lead">
-    This calculator demonstrates the child support obligations described in <a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" title="Minnesota House Bill HF2889">Minnesota House Bill HF2889</a>. 
-    HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support. 
+    This calculator demonstrates the child support obligations described in <a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" title="Minnesota House Bill HF2889">Minnesota House Bill HF2889</a>.
+    HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.
+  <p class="lead">@Html.ActionLink("See an example of the parenting time cliff", "Examples", "Home") and learn how it negatively impacts families in Minnesota.</p>
+  <p class="lead">
+    Please @Html.ActionLink("contact your Representative", "Contact", "Home") and urge them to support this bill HF2889.
   </p>
 </div>
 
@@ -62,17 +65,17 @@
       <span class="col-md-2 col-sm-2 col-xs-3"><strong>Parent&nbsp;B</strong></span>
     </div>
 
-      <div class="form-group bottomDottedBorder">
-        @Html.LabelFor(model => model.ParentAMonthlyIncomeReceived, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
-        <div class="col-md-2 col-sm-2 col-xs-3">
-          @Html.TextBoxFor(m => m.ParentAMonthlyIncomeReceived, new { @class = "form-control smallWidth" })
-          @Html.ValidationMessageFor(model => model.ParentAMonthlyIncomeReceived, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-3">
-          @Html.TextBoxFor(m => m.ParentBMonthlyIncomeReceived, new { @class = "form-control smallWidth" })
-          @Html.ValidationMessageFor(model => model.ParentBMonthlyIncomeReceived, "", new { @class = "text-danger" })
-        </div>
+    <div class="form-group bottomDottedBorder">
+      @Html.LabelFor(model => model.ParentAMonthlyIncomeReceived, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentAMonthlyIncomeReceived, new { @class = "form-control smallWidth" })
+        @Html.ValidationMessageFor(model => model.ParentAMonthlyIncomeReceived, "", new { @class = "text-danger" })
       </div>
+      <div class="col-md-2 col-sm-2 col-xs-3">
+        @Html.TextBoxFor(m => m.ParentBMonthlyIncomeReceived, new { @class = "form-control smallWidth" })
+        @Html.ValidationMessageFor(model => model.ParentBMonthlyIncomeReceived, "", new { @class = "text-danger" })
+      </div>
+    </div>
 
       <div class="form-group bottomDottedBorder">
         @Html.LabelFor(model => model.ParentAOvernights, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
@@ -85,15 +88,15 @@
         </div>
       </div>
 
-        <div class="form-group bottomDottedBorder">
-          <label class="control-label col-md-8 col-sm-8 col-xs-6">Percentage of Parenting Time</label>
-          <div class="col-md-2 col-sm-2 col-xs-3">
-            <span id="parentAPercentage">50</span>%
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-3">
-            <span id="parentBPercentage">50</span>%
-          </div>
+      <div class="form-group bottomDottedBorder">
+        <label class="control-label col-md-8 col-sm-8 col-xs-6">Percentage of Parenting Time</label>
+        <div class="col-md-2 col-sm-2 col-xs-3">
+          <span id="parentAPercentage">50</span>%
         </div>
+        <div class="col-md-2 col-sm-2 col-xs-3">
+          <span id="parentBPercentage">50</span>%
+        </div>
+      </div>
 
         <div class="form-group bottomDottedBorder">
           @Html.LabelFor(model => model.ParentAPotentialIncome, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
@@ -167,7 +170,7 @@
         </div>
 
         <div class="form-group">
-          <div class="col-md-offset-8 col-md-2" style="margin-top: 10px">
+          <div class="col-md-offset-8 col-md-2 col-sm-offset-8 col-sm-2 col-xs-offset-8 col-xs-2" style="margin-top: 10px">
             <input type="submit" value="Calculate" class="btn btn-primary" />
           </div>
         </div>
