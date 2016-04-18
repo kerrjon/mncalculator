@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace MnCalculator
@@ -13,7 +9,18 @@ namespace MnCalculator
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+      routes.MapRoute(
+                name: "ContactYourRespresentive",
+                url: "contact-your-mn-representative",
+                defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional }
+            );
+      routes.MapRoute(
+                name: "Examples",
+                url: "unfair-child-support-examples-in-mn",
+                defaults: new { controller = "Home", action = "Examples", id = UrlParameter.Optional }
+            );
+
+      routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
