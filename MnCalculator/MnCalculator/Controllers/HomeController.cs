@@ -1,8 +1,4 @@
 ﻿using MnCalculator.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 
@@ -19,6 +15,12 @@ namespace MnCalculator.Controllers
         [HttpPost]
         public ActionResult Result(ChildSupportForm model)
         {
+          if (model.ParentAMonthlyIncomeReceived <= 0 && model.ParentBMonthlyIncomeReceived <= 0)
+          {
+            ModelState.Clear();
+            ModelState.AddModelError(string.Empty, "Oops, you forgot to enter monthly incomes.  At least one parent must have a monthly income.");
+            return View("index", model);
+          }
             var calculatorResult = CalculatorResult.Create(model);
             return View(calculatorResult);
         }

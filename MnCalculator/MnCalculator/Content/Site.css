@@ -105,6 +105,21 @@ h2 {
   font-weight: normal;
   margin-right: 20px;
 }
+.validation-summary-errors {
+  background: #ffdddd;
+  border: 1px solid darkred;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+.validation-summary-errors ul {
+  margin: 0;
+}
+.validation-summary-errors li {
+  list-style: none;
+  color: darkred;
+  margin: 4px 0;
+  text-align: center;
+}
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,

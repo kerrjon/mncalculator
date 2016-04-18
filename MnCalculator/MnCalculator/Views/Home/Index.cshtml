@@ -33,22 +33,27 @@
 
     <div class="form-group" style="padding-bottom: 20px">
       <div class="col-md-3 col-sm-4">
-        @Html.LabelFor(model => model.ParentA, new { @class = "control-label" })<br />
+        @Html.LabelFor(model => model.ParentA, new {@class = "control-label"})<br/>
 
-        @Html.TextBoxFor(m => m.ParentA, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.ParentA, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(m => m.ParentA, new {@class = "form-control"})
+        @Html.ValidationMessageFor(model => model.ParentA, "", new {@class = "text-danger"})
       </div>
       <div class="col-md-3 col-sm-4 col-md-offset-1 col-sm-offset1">
-        @Html.LabelFor(model => model.ParentB, new { @class = "control-label" })<br />
-        @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.ParentB, new {@class = "control-label"})<br/>
+        @Html.TextBoxFor(m => m.ParentB, new {@class = "form-control"})
+        @Html.ValidationMessageFor(model => model.ParentB, "", new {@class = "text-danger"})
       </div>
-      <div class="col-md-3 col-sm-4 col-md-offset-1 col-sm-offset1">
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-12 col-sm-12">
         @Html.LabelFor(model => model.NumberOfChildren, new { @class = "control-label" })<br />
         @Html.TextBoxFor(m => m.NumberOfChildren, new { @class = "form-control smallWidth" })
         @Html.ValidationMessageFor(model => model.NumberOfChildren, "", new { @class = "text-danger" })
       </div>
     </div>
+
+    @Html.ValidationSummary()
 
       <div class="form-group bottomDottedBorder">
         <span class="col-md-8 col-sm-8 col-xs-6">&nbsp;</span>
@@ -160,6 +165,8 @@
         @Html.ValidationMessageFor(model => model.ParentBNonJointChildren, "", new {@class = "text-danger"})
       </div>
     </div>
+
+   
 
         <div class="form-group">
           <div class="col-md-offset-8 col-md-2">
