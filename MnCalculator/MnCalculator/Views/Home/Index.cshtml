@@ -187,6 +187,9 @@
         isNaN(parentBNights) ? $('#parentBOvernights').text("?") : $('#parentBOvernights').text(parentBNights);
         calcPercentOfTime();
       });
+      $('#ParentAMonthlyIncomeReceived, #ParentBMonthlyIncomeReceived').on('input', function () {
+        $(".validation-summary-errors").hide();
+      });
     });
 
     function calcPercentOfTime() {
