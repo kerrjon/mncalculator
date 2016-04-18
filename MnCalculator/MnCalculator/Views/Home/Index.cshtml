@@ -1,12 +1,14 @@
 ﻿@model MnCalculator.Models.ChildSupportForm
 @{
-  ViewBag.Title = "Minnesota Child Support Calculator - Bill HF2889";
+  ViewBag.Title = "Minnesota Child Support Calculator - MN House Bill HF2889";
+  ViewBag.Description = "The revised Minnesota Child Support Calculator based on Minnesota House Bill HF2889.  This bill removes the parenting time 'cliff' which produced unfair child support obligations and therefore increased parental conflict.";
+  ViewBag.Keywords = "child support, calculator, minnesota, hf2889, legislature";
 }
 
 <div class="jumbotron">
   <h1>Minnesota Child Support Calculator</h1>
   <p class="lead">
-    This calculator demostrates the calculated outcomes of Minnesota House Bill HF2889.  HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.  <br />To view the current calculator in effect as of @DateTime.Now.ToShortDateString()
+    This calculator demonstrates the calculated outcomes of Minnesota House Bill HF2889.  HF2889 addresses the calculation of the parenting expense adjustment for purposes of child support, and the guidelines for computing of child support.  <br />To view the current calculator in effect as of @DateTime.Now.ToShortDateString()
     <a href="http://childsupportcalculator.dhs.state.mn.us/" title="Minnesota Child Support Calculator">click here</a>
   </p>
   <p><a href="https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2889&ssn=0&y=2015" class="btn btn-primary btn-lg" title="Minnesota House Bill HF2889">See MN House Bill HF2889 &raquo;</a></p>
@@ -201,3 +203,14 @@
   </script>
 }
 
+@section AddToHeader {
+  <link rel="canonical" href="http://www.mncalculator.com" />
+  <meta property="og:title" content="Revised Minnesota Child Support Calculator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="The revised Minnesota Child Support Calculator based on Minnesota House Bill HF2889.  This bill removes the parenting time 'cliff' which produced unfair child support obligations." />
+  <meta property="og:url" content="http://www.mncalculator.com" />
+  <meta property="og:image" content="http://www.mncalculator.com/content/Images/mn-child-support-calculator.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+}

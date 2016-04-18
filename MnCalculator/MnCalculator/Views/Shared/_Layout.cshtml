@@ -4,8 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@ViewBag.Title</title>
+  <meta name="description" content="@ViewBag.MetaDescription">
+  <meta name="keywords" content="@ViewBag.Keywords">
   @Styles.Render("~/Content/css")
   @Scripts.Render("~/bundles/modernizr")
+  @RenderSection("AddToHeader", false)
   <script>
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
