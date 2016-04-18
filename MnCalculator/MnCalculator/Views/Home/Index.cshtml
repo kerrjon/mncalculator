@@ -33,15 +33,15 @@
 
     <div class="form-group" style="padding-bottom: 20px">
       <div class="col-md-3 col-sm-4">
-        @Html.LabelFor(model => model.ParentA, new {@class = "control-label"})<br/>
+        @Html.LabelFor(model => model.ParentA, new { @class = "control-label" })<br />
 
-        @Html.TextBoxFor(m => m.ParentA, new {@class = "form-control"})
-        @Html.ValidationMessageFor(model => model.ParentA, "", new {@class = "text-danger"})
+        @Html.TextBoxFor(m => m.ParentA, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ParentA, "", new { @class = "text-danger" })
       </div>
       <div class="col-md-3 col-sm-4 col-md-offset-1 col-sm-offset1">
-        @Html.LabelFor(model => model.ParentB, new {@class = "control-label"})<br/>
-        @Html.TextBoxFor(m => m.ParentB, new {@class = "form-control"})
-        @Html.ValidationMessageFor(model => model.ParentB, "", new {@class = "text-danger"})
+        @Html.LabelFor(model => model.ParentB, new { @class = "control-label" })<br />
+        @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
       </div>
     </div>
 
@@ -55,11 +55,11 @@
 
     @Html.ValidationSummary()
 
-      <div class="form-group bottomDottedBorder">
-        <span class="col-md-8 col-sm-8 col-xs-6">&nbsp;</span>
-        <span class="col-md-2 col-sm-2 col-xs-3"><strong>Parent&nbsp;A</strong></span>
-        <span class="col-md-2 col-sm-2 col-xs-3"><strong>Parent&nbsp;B</strong></span>
-      </div>
+    <div class="form-group bottomDottedBorder">
+      <span class="col-md-8 col-sm-8 col-xs-6">&nbsp;</span>
+      <span class="col-md-2 col-sm-2 col-xs-3"><strong>Parent&nbsp;A</strong></span>
+      <span class="col-md-2 col-sm-2 col-xs-3"><strong>Parent&nbsp;B</strong></span>
+    </div>
 
       <div class="form-group bottomDottedBorder">
         @Html.LabelFor(model => model.ParentAMonthlyIncomeReceived, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
@@ -73,16 +73,16 @@
         </div>
       </div>
 
-        <div class="form-group bottomDottedBorder">
-          @Html.LabelFor(model => model.ParentAOvernights, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
-          <div class="col-md-2 col-sm-2 col-xs-3">
-            @Html.TextBoxFor(m => m.ParentAOvernights, new { @class = "form-control smallWidth" })
-            @Html.ValidationMessageFor(model => model.ParentAOvernights, "", new { @class = "text-danger" })
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-3">
-            <span id="parentBOvernights">182.5</span>
-          </div>
+      <div class="form-group bottomDottedBorder">
+        @Html.LabelFor(model => model.ParentAOvernights, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+        <div class="col-md-2 col-sm-2 col-xs-3">
+          @Html.TextBoxFor(m => m.ParentAOvernights, new { @class = "form-control smallWidth" })
+          @Html.ValidationMessageFor(model => model.ParentAOvernights, "", new { @class = "text-danger" })
         </div>
+        <div class="col-md-2 col-sm-2 col-xs-3">
+          <span id="parentBOvernights">182.5</span>
+        </div>
+      </div>
 
         <div class="form-group bottomDottedBorder">
           <label class="control-label col-md-8 col-sm-8 col-xs-6">Percentage of Parenting Time</label>
@@ -153,24 +153,21 @@
           </div>
         </div>
 
-
-    <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.ParentANonJointChildren, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentANonJointChildren, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentANonJointChildren, "", new {@class = "text-danger"})
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentBNonJointChildren, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentBNonJointChildren, "", new {@class = "text-danger"})
-      </div>
-    </div>
-
-   
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentANonJointChildren, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentANonJointChildren, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentANonJointChildren, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBNonJointChildren, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBNonJointChildren, "", new { @class = "text-danger" })
+          </div>
+        </div>
 
         <div class="form-group">
           <div class="col-md-offset-8 col-md-2">
-            <input type="submit" value="Calculate" class="btn btn-primary"/>
+            <input type="submit" value="Calculate" class="btn btn-primary" />
           </div>
         </div>
   }

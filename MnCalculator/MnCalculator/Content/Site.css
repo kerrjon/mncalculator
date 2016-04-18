@@ -120,6 +120,9 @@ h2 {
   margin: 4px 0;
   text-align: center;
 }
+.resultRow.highlighted {
+  background-color: #fbffd3;
+}
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,

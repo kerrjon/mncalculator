@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.DynamicData;
+using System.Web.Mvc;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -142,6 +144,48 @@ namespace MnCalculator.Models
         model.ParentB.BasicSupportObligationAfterAdjustment = 0;
       }
 
+      if (model.ParentA.PercentageOfParentingTime >= 45.1)
+      {
+        model.ParentA.LegacyObligation = Math.Round((double)model.CombinedBasicSupportObligation * .75 * (Math.Round(model.ParentA.PicsPercentage / 100,2)), 2);
+        model.ParentB.LegacyObligation = Math.Round((double)model.CombinedBasicSupportObligation * .75 * (Math.Round(model.ParentB.PicsPercentage / 100,2)), 2);
+        if (model.ParentA.LegacyObligation >= model.ParentB.LegacyObligation)
+        {
+          model.ParentA.LegacyObligation = Math.Round(model.ParentA.LegacyObligation - model.ParentB.LegacyObligation, 0);
+          model.ParentB.LegacyObligation = 0;
+        }
+        else
+        {
+          model.ParentB.LegacyObligation = Math.Round(model.ParentB.LegacyObligation - model.ParentA.LegacyObligation, 0);
+          model.ParentA.LegacyObligation = 0;
+        }
+      }
+      else if (model.ParentA.PercentageOfParentingTime >= 10 && model.ParentA.PercentageOfParentingTime <= 45.1)
+      {
+        model.ParentA.LegacyObligation = Math.Round(model.ParentA.ProRataBasicSupportObligation *.88 , 0);
+        model.ParentB.LegacyObligation = Math.Round(model.ParentB.ProRataBasicSupportObligation *.88 , 0);
+        if (model.ParentA.LegacyObligation >= model.ParentB.LegacyObligation)
+        {
+          model.ParentB.LegacyObligation = 0;
+        }
+        else
+        {
+          model.ParentA.LegacyObligation = 0;
+        }
+      }
+      else // less than 10%
+      {
+        model.ParentA.LegacyObligation = model.ParentA.ProRataBasicSupportObligation;
+        model.ParentB.LegacyObligation = model.ParentB.ProRataBasicSupportObligation;
+        if (model.ParentA.LegacyObligation >= model.ParentB.LegacyObligation)
+        {
+          model.ParentB.LegacyObligation = 0;
+        }
+        else
+        {
+          model.ParentA.LegacyObligation = 0;
+        }
+      }
+
       return model;
     }
   }
@@ -192,6 +236,9 @@ namespace MnCalculator.Models
 
     [Display(Name = "2b. Deduction for Nonjoint Child(ren) in the Home")]
     public double DeductionForNonJointChildren { get; set; }
+
+    [Display(Name = "Legacy Obligation")]
+    public double LegacyObligation { get; set; }
   }
 
   public class Income
