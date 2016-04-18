@@ -71,7 +71,10 @@
     font-size: 14px;
 }
 
-#parentBOvernights {
+#parentBOvernights,
+#parentAPercentage,
+#parentBPercentage
+ {
     padding-top: 3px;
     padding-left: 10px;
     display: inline-block;

@@ -26,13 +26,13 @@
       </div>
     </div>
 
-        <div class="form-group">
-          @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-12" })
-          <div class="col-md-12">
-            @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
-          </div>
-        </div>
+    <div class="form-group">
+      @Html.LabelFor(model => model.ParentB, new { @class = "control-label col-md-12" })
+      <div class="col-md-12">
+        @Html.TextBoxFor(m => m.ParentB, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ParentB, "", new { @class = "text-danger" })
+      </div>
+    </div>
 
         <div class="form-group">
           @Html.LabelFor(model => model.CaseNumber, new { @class = "control-label col-md-12" })
@@ -88,76 +88,86 @@
     </div>
 
     <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.ParentAPotentialIncome, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
+      <label class="control-label col-md-8 col-sm-8 col-xs-6">Percentage of Parenting Time</label>
       <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentAPotentialIncome, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentAPotentialIncome, "", new {@class = "text-danger"})
+        <span id="parentAPercentage">50</span>%
       </div>
       <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentBPotentialIncome, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentBPotentialIncome, "", new {@class = "text-danger"})
+        <span id="parentBPercentage">50</span>%
       </div>
     </div>
 
-    <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.ParentASocialSecurityBenefits, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentASocialSecurityBenefits, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentASocialSecurityBenefits, "", new {@class = "text-danger"})
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentBSocialSecurityBenefits, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentBSocialSecurityBenefits, "", new {@class = "text-danger"})
-      </div>
-    </div>
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentAPotentialIncome, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentAPotentialIncome, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentAPotentialIncome, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBPotentialIncome, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBPotentialIncome, "", new { @class = "text-danger" })
+          </div>
+        </div>
 
-    <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.IsParentBRepresentativePayee, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
-      <div class="col-md-4 col-sm-4 col-xs-6">
-        @Html.RadioButtonFor(m => m.IsParentBRepresentativePayee, "Yes", new { id = "payeeYes" })
-        @Html.Label("payeeYes", "Yes", new { @class = "radio-label" })
-        @Html.RadioButtonFor(m => m.IsParentBRepresentativePayee, "No", new { id = "payeeNo", Checked = "checked" })
-        @Html.Label("payeeNo", "No", new {@class= "radio-label" })
-        @Html.ValidationMessageFor(model => model.IsParentBRepresentativePayee, "", new { @class = "text-danger" })
-      </div>
-    </div>
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentASocialSecurityBenefits, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentASocialSecurityBenefits, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentASocialSecurityBenefits, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBSocialSecurityBenefits, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBSocialSecurityBenefits, "", new { @class = "text-danger" })
+          </div>
+        </div>
 
-    <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.ParentASpousalMaintenance, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentASpousalMaintenance, new { @class = "form-control smallWidth" })
-        @Html.ValidationMessageFor(model => model.ParentASpousalMaintenance, "", new { @class = "text-danger" })
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentBSpousalMaintenance, new { @class = "form-control smallWidth" })
-        @Html.ValidationMessageFor(model => model.ParentBSpousalMaintenance, "", new { @class = "text-danger" })
-      </div>
-    </div>
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.IsParentBRepresentativePayee, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-4 col-sm-4 col-xs-6">
+            @Html.RadioButtonFor(m => m.IsParentBRepresentativePayee, "Yes", new { id = "payeeYes" })
+            @Html.Label("payeeYes", "Yes", new { @class = "radio-label" })
+            @Html.RadioButtonFor(m => m.IsParentBRepresentativePayee, "No", new { id = "payeeNo", Checked = "checked" })
+            @Html.Label("payeeNo", "No", new { @class = "radio-label" })
+            @Html.ValidationMessageFor(model => model.IsParentBRepresentativePayee, "", new { @class = "text-danger" })
+          </div>
+        </div>
 
-    <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.ParentANonJointChildSupport, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentANonJointChildSupport, new { @class = "form-control smallWidth" })
-        @Html.ValidationMessageFor(model => model.ParentANonJointChildSupport, "", new { @class = "text-danger" })
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentBNonJointChildSupport, new { @class = "form-control smallWidth" })
-        @Html.ValidationMessageFor(model => model.ParentBNonJointChildSupport, "", new { @class = "text-danger" })
-      </div>
-    </div>
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentASpousalMaintenance, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentASpousalMaintenance, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentASpousalMaintenance, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBSpousalMaintenance, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBSpousalMaintenance, "", new { @class = "text-danger" })
+          </div>
+        </div>
+
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentANonJointChildSupport, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentANonJointChildSupport, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentANonJointChildSupport, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBNonJointChildSupport, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBNonJointChildSupport, "", new { @class = "text-danger" })
+          </div>
+        </div>
 
 
-    <div class="form-group bottomDottedBorder">
-      @Html.LabelFor(model => model.ParentANonJointChildren, new {@class = "control-label col-md-8 col-sm-8 col-xs-6"})
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentANonJointChildren, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentANonJointChildren, "", new {@class = "text-danger"})
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-3">
-        @Html.TextBoxFor(m => m.ParentBNonJointChildren, new {@class = "form-control smallWidth"})
-        @Html.ValidationMessageFor(model => model.ParentBNonJointChildren, "", new {@class = "text-danger"})
-      </div>
-    </div>
+        <div class="form-group bottomDottedBorder">
+          @Html.LabelFor(model => model.ParentANonJointChildren, new { @class = "control-label col-md-8 col-sm-8 col-xs-6" })
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentANonJointChildren, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentANonJointChildren, "", new { @class = "text-danger" })
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            @Html.TextBoxFor(m => m.ParentBNonJointChildren, new { @class = "form-control smallWidth" })
+            @Html.ValidationMessageFor(model => model.ParentBNonJointChildren, "", new { @class = "text-danger" })
+          </div>
+        </div>
 
 
         <div class="form-group">
@@ -174,11 +184,23 @@
   @Scripts.Render("~/bundles/unobtrusive")
   <script>
     $(document).ready(function () {
+      calcPercentOfTime();
       $('#ParentAOvernights').on('input', function () {
         var parentBNights = 365 - $('#ParentAOvernights').val();
         isNaN(parentBNights) ? $('#parentBOvernights').text("?") : $('#parentBOvernights').text(parentBNights);
+        calcPercentOfTime();
       });
     });
+
+    function calcPercentOfTime() {
+      $('#parentAPercentage').text(roundedToFixed($('#ParentAOvernights').val() / 365 * 100, 1));
+      $('#parentBPercentage').text(roundedToFixed((365 - $('#ParentAOvernights').val()) / 365 * 100, 1));
+    }
+
+    function roundedToFixed(float, digits) {
+      var rounder = Math.pow(10, digits);
+      return (Math.round(float * rounder) / rounder).toFixed(digits);
+    }
   </script>
 }
 
