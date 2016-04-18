@@ -54,7 +54,7 @@ namespace MnCalculator.Models
           SpousalMaintenance = (double)input.ParentASpousalMaintenance,
           NonJointChildSupport = (double)input.ParentANonJointChildSupport,
           GrossIncome = Math.Round((double) parentAGrossIncome, 0),
-          NumberOfNonJointChildren = input.ParentANonJointChildren,
+          NumberOfNonJointChildren = input.ParentANonJointChildren > 2 ? 2 :input.ParentANonJointChildren,
           PercentageOfParentingTime =
                         Math.Round(input.ParentAOvernights / (input.ParentAOvernights + parentBOvernights), 3) * 100,
           Overnights = Math.Round(input.ParentAOvernights, 1),
@@ -73,7 +73,7 @@ namespace MnCalculator.Models
           SpousalMaintenance = (double)input.ParentBSpousalMaintenance,
           NonJointChildSupport = (double)input.ParentBNonJointChildSupport,
           GrossIncome = Math.Round((double) parentBGrossIncome, 0),
-          NumberOfNonJointChildren = input.ParentBNonJointChildren,
+          NumberOfNonJointChildren = input.ParentBNonJointChildren > 2 ? 2 : input.ParentBNonJointChildren,
           PercentageOfParentingTime =
                         Math.Round(parentBOvernights / (input.ParentAOvernights + parentBOvernights), 3) * 100,
           Overnights = parentBOvernights,

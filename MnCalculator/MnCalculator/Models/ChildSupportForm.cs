@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.ComponentModel.DataAnnotations;
-using System.EnterpriseServices;
-
 namespace MnCalculator.Models
 {
     public class ChildSupportForm : IEnumerable
@@ -9,9 +7,9 @@ namespace MnCalculator.Models
         public ChildSupportForm()
         {
             NumberOfChildren = 1;
-            ParentAMonthlyIncomeReceived = 2000;
+            ParentAMonthlyIncomeReceived = 0;
             ParentAOvernights = 182.5;
-            ParentBMonthlyIncomeReceived = 2000;
+            ParentBMonthlyIncomeReceived = 0;
         }
 
         [Display(Name ="Parent A Name")]
