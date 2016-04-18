@@ -112,8 +112,8 @@ namespace MnCalculator.Models
 
         if (model.ParentB.NumberOfNonJointChildren > 0) // update the discount, if applicable
         {
-          model.ParentA.DeductionForNonJointChildren = obligationData.Incomes.Where(i => model.Combined.PicsAmount >= i.Min && model.Combined.PicsAmount <= i.Max).SelectMany(i => i.Amounts).First(x => x.Children == model.ParentB.NumberOfNonJointChildren).Value / 2;
-          model.ParentA.PicsAmount = model.ParentA.PicsAmount - model.ParentA.DeductionForNonJointChildren;
+          model.ParentB.DeductionForNonJointChildren = obligationData.Incomes.Where(i => model.ParentB.GrossIncome >= i.Min && model.ParentB.GrossIncome <= i.Max).SelectMany(i => i.Amounts).First(x => x.Children == model.ParentB.NumberOfNonJointChildren).Value / 2;
+          model.ParentB.PicsAmount = model.ParentB.PicsAmount - model.ParentB.DeductionForNonJointChildren;
         }
 
         model.Combined.PicsAmount = model.ParentA.PicsAmount + model.ParentB.PicsAmount;
@@ -123,8 +123,8 @@ namespace MnCalculator.Models
         model.CombinedBasicSupportObligation = obligationData.Incomes.Where(i => model.Combined.PicsAmount >= i.Min && model.Combined.PicsAmount <= i.Max).SelectMany(i => i.Amounts).First(x => x.Children == input.NumberOfChildren).Value;
       }
 
-      model.ParentA.ProRataBasicSupportObligation = Math.Round(model.ParentA.PicsPercentage / 100 * (double) model.CombinedBasicSupportObligation, 2);
-      model.ParentB.ProRataBasicSupportObligation = Math.Round(model.ParentB.PicsPercentage / 100 * (double) model.CombinedBasicSupportObligation, 2);
+      model.ParentA.ProRataBasicSupportObligation = Math.Round(Math.Round(model.ParentA.PicsPercentage / 100, 2) * (double) model.CombinedBasicSupportObligation, 0);
+      model.ParentB.ProRataBasicSupportObligation = Math.Round(Math.Round(model.ParentB.PicsPercentage / 100, 2) * (double) model.CombinedBasicSupportObligation, 0);
 
       //calculate the parenting time adjustment
       var parentingTimeAdjusment = ((Math.Pow(parentBOvernights, 3.00) * model.ParentA.ProRataBasicSupportObligation) -
@@ -134,11 +134,11 @@ namespace MnCalculator.Models
       if (parentingTimeAdjusment < 0) //Parent B is obligor (it is not A as described in bill?)
       {
         model.ParentA.BasicSupportObligationAfterAdjustment = 0;
-        model.ParentB.BasicSupportObligationAfterAdjustment = Math.Round(parentingTimeAdjusment * -1, 2);
+        model.ParentB.BasicSupportObligationAfterAdjustment = Math.Round(parentingTimeAdjusment * -1, 0);
       }
       else
       {
-        model.ParentA.BasicSupportObligationAfterAdjustment = Math.Round(parentingTimeAdjusment, 2);
+        model.ParentA.BasicSupportObligationAfterAdjustment = Math.Round(parentingTimeAdjusment, 0);
         model.ParentB.BasicSupportObligationAfterAdjustment = 0;
       }
 
